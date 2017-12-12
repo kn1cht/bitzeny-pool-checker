@@ -47,12 +47,11 @@ const checkAPI = async(uri) => {
 
 /*** check Stratum Port reachability ***/
 const checkStratum = async(host, port) => {
-  const portStatus = await util.promisify(portscanner.checkPortStatus)(port, host);
+  const portStatus = await portscanner.checkPortStatus(port, { host, timeout : 2000 });
   return portStatus === 'open' ? true : false;
 };
 
 const postTweet = (status) => {
-  console.info(status);
   bot.post('statuses/update', { status }, (err/*, tweet, response*/) => { 
     if (err) { console.error(err); } 
   }); 
@@ -71,6 +70,7 @@ const main = async() => {
       text += `Webダッシュボード: ${api ? '\u2705 正常' : '\u26a0 停止'}\n`;
       text += `Stratumポート: ${stratum ? '\u2705 正常' : '\u26a0 停止'}\n`;
       text += '#bitzeny #ZNY';
+      console.info(text);
       postTweet(text);
     }
   }
