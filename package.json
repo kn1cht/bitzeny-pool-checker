@@ -1,0 +1,35 @@
+{
+  "name": "bitzeny-pool-checker",
+  "version": "1.0.0",
+  "description": "Check whether bitZeny mining pools is up.",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "eslint *.js",
+    "mocha": "NODE_ENV=test mocha --require intelli-espower-loader",
+    "istanbul": "NODE_ENV=test istanbul cover _mocha",
+    "coveralls": "npm run istanbul && node ./node_modules/coveralls/bin/coveralls.js < ./coverage/lcov.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kn1cht/defaultSortBot.git"
+  },
+  "author": "kn1cht",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^1.26.1",
+    "dotenv": "^4.0.0",
+    "js-yaml": "^3.10.0",
+    "node-cron": "^1.2.1",
+    "portscanner": "^2.1.1",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "coveralls": "^2.13.1",
+    "eslint": "^4.1.0",
+    "intelli-espower-loader": "^1.0.1",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^3.4.2",
+    "power-assert": "^1.4.4"
+  }
+}

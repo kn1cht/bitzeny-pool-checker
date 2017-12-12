@@ -1,0 +1,84 @@
+{
+  "env": {
+    "node"    : true,
+    "mocha"   : true,
+    "es6"     : true,
+    "browser" : true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8
+  },
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single",
+      "avoid-escape"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "camelcase" : ["error", {
+      "properties" : "never"
+    }],
+    "key-spacing": ["error", {
+        "singleLine" : {
+          "beforeColon": true,
+          "afterColon": true
+        },
+        "multiLine" : {
+          "beforeColon": true,
+          "afterColon" : true,
+          "align"      : "colon"
+        }
+      }],
+    "eqeqeq"          : "error",
+    "block-scoped-var": "error",
+    "complexity"      : ["error", {
+      "maximum": 10
+    }],
+    "curly": "error",
+    "default-case": "error",
+    "dot-location": ["error", "property"],
+    "guard-for-in": "error",
+    "no-eval": "error",
+    "block-spacing": "error",
+    "comma-spacing": ["error", {
+      "before" : false,
+      "after"  : true
+    }],
+    "id-length": ["error", {
+      "min": 2,
+      //"max": 16, // 最大文字列長なし。
+      "properties": "never",
+      "exceptions": []   //除外変数名
+    }],
+    "space-before-function-paren": [
+      "error",
+      "never"
+    ],
+    "space-before-blocks": "error",
+    "prefer-const": "error",
+    "no-var": "error",
+    "arrow-spacing": "error",
+    "no-warning-comments": ["warn", {
+      "terms": [
+        "todo",
+        "fixme",
+        "hack"
+      ],
+      "location": "anywhere"
+    }],
+    "no-console": "off"
+  }
+}

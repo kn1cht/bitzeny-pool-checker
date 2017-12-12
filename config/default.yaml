@@ -1,0 +1,65 @@
+apipath: /index.php?page=api&action=public
+pools:
+  -
+    name: LA Bitzeny Pool
+    id: lapool
+    url: https://lapool.me/bitzeny
+    stratum:
+      host: jp.lapool.me
+      port: 3014
+  -
+    name: zeny MDpool
+    id: mdpool
+    url: https://zeny.mdpool.info
+    stratum:
+      host: zeny.mdpool.info
+      port: 6969
+  -
+    name: zeny MDpool(new)
+    id: mdnew
+    url: https://n-zeny.mdpool.info
+    stratum:
+      host: mining-zeny.mdpool.info
+      port: 6962
+  -
+    name: うさぎコイン発掘所
+    id: bunny
+    url: https://bunnymining.work/bitzeny
+    stratum:
+      host: bunnymining.work
+      port: 19333
+  -
+    name: みそスープール
+    id: soupmiso
+    url: https://soup.misosi.ru
+    stratum:
+      host: stratum.misosi.ru
+      port: 16001
+  -
+    name: 大人の自由研究
+    id: otonajiyuu
+    url: https://ukkey3.space/bitzeny
+    stratum:
+      host: ukkey3.space
+      port: 3333
+  -
+    name: 寛 永 通 宝
+    id: kannei
+    url: https://bitzenypool.work
+    stratum:
+      host: bitzenypool.work
+      port: 19666
+  -
+    name: wmapool bitzeny(β)
+    id: wmapool
+    url: https://www.wmapool.net
+    stratum:
+      host: wmapool.net
+      port: 19667
+  -
+    name: みずたまり【テスト稼働中】
+    id: mizutamari
+    url: https://bitzeny.mizutamari.work
+    stratum:
+      host: bitzeny-m.mizutamari.work
+      port: 19702
