@@ -1,5 +1,6 @@
 *.swp
 *~
+*.bak
 node_modules
 .env
 coverage/*

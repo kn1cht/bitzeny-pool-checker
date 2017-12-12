@@ -55,7 +55,7 @@ const postTweet = (status) => {
   console.info(status);
   bot.post('statuses/update', { status }, (err/*, tweet, response*/) => { 
     if (err) { console.error(err); } 
-  });
+  }); 
 };
 
 const main = async() => {

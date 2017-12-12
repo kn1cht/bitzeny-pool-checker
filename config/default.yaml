@@ -49,6 +49,12 @@ pools:
     stratum:
       host: bitzenypool.work
       port: 19666
+  - name: BitZeny選民プール
+    id: senmin
+    url: https://zny.arunyastyle.com
+    stratum:
+      host: zny.arunyastyle.com
+      port: 19666
   -
     name: wmapool bitzeny(β)
     id: wmapool
