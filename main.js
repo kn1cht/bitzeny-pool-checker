@@ -105,11 +105,10 @@ const tweetAllStatus = () => {
   postTweet(text);
 }
 
-cron.schedule('3-57/3 * * * *', () => {
+cron.schedule('*/3 * * * *', () => {
   checkCurrentStatus();
 });
 
 cron.schedule('0 * * * *', async() => {
-  await checkCurrentStatus();
   tweetAllStatus();
 });
