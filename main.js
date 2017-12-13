@@ -33,7 +33,7 @@ const checkAPI = async(uri) => {
       resolve({ error : 'Timeout' });
     }).on('error', (err) => {
       console.debug(err);
-    }).setTimeout(2000).end();
+    }).setTimeout(15000).end();
   });
   if(!data.error) {
     try {
@@ -89,4 +89,28 @@ const checkCurrentStatus = async() => {
   }
 };
 
-cron.schedule('0-59/5 * * * *', () => { checkCurrentStatus(); });
+const tweetAllStatus = () => {
+  let text = '【定期】プール稼働状況\n';
+  for(const pool of config.pools) {
+    const status = previousStatus[pool.id];
+    text += `${pool.shortname || pool.name} `
+    if(status.api && status.stratum) { text += '\u2705'; }
+    else if(status.stratum) { text += '\u26a0(Web)'; }
+    else if(status.api) { text += '\u26a0(Stratum)'; }
+    else { text += '\u26a0(Web/Stratum)'; }
+    text += `\n`; 
+  }
+  text += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST)\n`;
+  text += '#bitzeny #ZNY';
+  console.info(text);
+  postTweet(text);
+}
+
+cron.schedule('3-27,33-57/3 * * * *', () => { 
+  checkCurrentStatus(); 
+});
+
+cron.schedule('0,30 * * * *', async() => {
+  await checkCurrentStatus();
+  tweetAllStatus();
+});

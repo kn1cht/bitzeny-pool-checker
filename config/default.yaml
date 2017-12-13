@@ -2,6 +2,7 @@ apipath: /index.php?page=api&action=public
 pools:
   -
     name: LA Bitzeny Pool
+    shortname: LA Pool
     id: lapool
     url: https://lapool.me/bitzeny
     stratum:
@@ -9,6 +10,7 @@ pools:
       port: 3014
   -
     name: zeny MDpool
+    shortname: MDpool
     id: mdpool
     url: https://zeny.mdpool.info
     stratum:
@@ -16,6 +18,7 @@ pools:
       port: 6969
   -
     name: zeny MDpool(new)
+    shortname: MDpool(new)
     id: mdnew
     url: https://n-zeny.mdpool.info
     stratum:
@@ -23,6 +26,7 @@ pools:
       port: 6962
   -
     name: うさぎコイン発掘所
+    shortname: うさぎコイン
     id: bunny
     url: https://bunnymining.work/bitzeny
     stratum:
@@ -49,7 +53,9 @@ pools:
     stratum:
       host: bitzenypool.work
       port: 19666
-  - name: BitZeny選民プール
+  - 
+    name: BitZeny選民プール
+    shortname: 選民プール
     id: senmin
     url: https://zny.arunyastyle.com
     stratum:
@@ -57,6 +63,7 @@ pools:
       port: 19666
   -
     name: wmapool bitzeny(β)
+    shortname: wmapool
     id: wmapool
     url: https://www.wmapool.net
     stratum:
@@ -64,6 +71,7 @@ pools:
       port: 19667
   -
     name: みずたまり【テスト稼働中】
+    shortname: みずたまり
     id: mizutamari
     url: https://bitzeny.mizutamari.work
     stratum:
