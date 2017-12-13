@@ -53,7 +53,7 @@ pools:
     stratum:
       host: bitzenypool.work
       port: 19666
-  - 
+  -
     name: BitZeny選民プール
     shortname: 選民プール
     id: senmin

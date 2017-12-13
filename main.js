@@ -28,7 +28,7 @@ const checkAPI = async(uri) => {
       res.setEncoding('utf8');
       let body = '';
       res.on('data', (data) => { body += data; });
-      res.on('end', () => { resolve({ body }); });   
+      res.on('end', () => { resolve({ body }); });
     }).on('timeout', () => {
       resolve({ error : 'Timeout' });
     }).on('error', (err) => {
@@ -54,9 +54,9 @@ const checkStratum = async(host, port) => {
 };
 
 const postTweet = (status) => {
-  bot.post('statuses/update', { status }, (err/*, tweet, response*/) => { 
-    if (err) { console.error(err); } 
-  }); 
+  bot.post('statuses/update', { status }, (err/*, tweet, response*/) => {
+    if (err) { console.error(err); }
+  });
 };
 
 const checkCurrentStatus = async() => {
@@ -82,7 +82,6 @@ const checkCurrentStatus = async() => {
       text += `Webダッシュボード: ${current.api ? '\u2705 正常' : '\u26a0 停止'}\n`;
       text += `Stratumポート: ${current.stratum ? '\u2705 正常' : '\u26a0 停止'}\n`;
       text += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST)\n`;
-      text += '#bitzeny #ZNY';
       console.info(text);
       postTweet(text);
     }
@@ -98,7 +97,7 @@ const tweetAllStatus = () => {
     else if(status.stratum) { text += '\u26a0(Web)'; }
     else if(status.api) { text += '\u26a0(Stratum)'; }
     else { text += '\u26a0(Web/Stratum)'; }
-    text += `\n`; 
+    text += `\n`;
   }
   text += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST)\n`;
   text += '#bitzeny #ZNY';
@@ -106,11 +105,11 @@ const tweetAllStatus = () => {
   postTweet(text);
 }
 
-cron.schedule('3-27,33-57/3 * * * *', () => { 
-  checkCurrentStatus(); 
+cron.schedule('3-57/3 * * * *', () => {
+  checkCurrentStatus();
 });
 
-cron.schedule('0,30 * * * *', async() => {
+cron.schedule('0 * * * *', async() => {
   await checkCurrentStatus();
   tweetAllStatus();
 });
