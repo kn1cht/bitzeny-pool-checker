@@ -32,8 +32,8 @@ const checkAPI = async(uri) => {
     }).on('timeout', () => {
       resolve({ error : 'Timeout' });
     }).on('error', (err) => {
-      console.debug(err);
-    }).setTimeout(15000).end();
+      resolve({ error : err });
+    }).setTimeout(config.timeout.api || 1000).end();
   });
   if(!data.error) {
     try {
@@ -49,7 +49,10 @@ const checkAPI = async(uri) => {
 
 /*** check Stratum Port reachability ***/
 const checkStratum = async(host, port) => {
-  const portStatus = await portscanner.checkPortStatus(port, { host, timeout : 1000 });
+  const portStatus = await portscanner.checkPortStatus(port, { 
+    host, 
+    timeout : config.timeout.stratum || 1000
+  });
   return portStatus === 'open' ? true : false;
 };
 
