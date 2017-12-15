@@ -8,6 +8,7 @@ pools:
     shortname: LA Pool
     id: lapool
     url: https://lapool.me/bitzeny
+    alert_enabled: true
     stratum:
       host: jp.lapool.me
       port: 3014
@@ -16,6 +17,7 @@ pools:
     shortname: MDpool
     id: mdpool
     url: https://zeny.mdpool.info
+    alert_enabled: false
     stratum:
       host: zeny.mdpool.info
       port: 6969
@@ -24,6 +26,7 @@ pools:
     shortname: MDpool(new)
     id: mdnew
     url: https://n-zeny.mdpool.info
+    alert_enabled: false
     stratum:
       host: mining-zeny.mdpool.info
       port: 6962
@@ -32,6 +35,7 @@ pools:
     shortname: うさぎコイン
     id: bunny
     url: https://bunnymining.work/bitzeny
+    alert_enabled: true
     stratum:
       host: bunnymining.work
       port: 19333
@@ -39,6 +43,7 @@ pools:
     name: みそスープール
     id: soupmiso
     url: https://soup.misosi.ru
+    alert_enabled: true
     stratum:
       host: stratum.misosi.ru
       port: 16001
@@ -46,6 +51,7 @@ pools:
     name: 大人の自由研究
     id: otonajiyuu
     url: https://ukkey3.space/bitzeny
+    alert_enabled: true
     stratum:
       host: ukkey3.space
       port: 3333
@@ -53,6 +59,7 @@ pools:
     name: 寛 永 通 宝
     id: kannei
     url: https://bitzenypool.work
+    alert_enabled: true
     stratum:
       host: bitzenypool.work
       port: 19666
@@ -61,6 +68,7 @@ pools:
     shortname: 選民プール
     id: senmin
     url: https://zny.arunyastyle.com
+    alert_enabled: true
     stratum:
       host: zny.arunyastyle.com
       port: 19666
@@ -69,6 +77,7 @@ pools:
     shortname: wmapool
     id: wmapool
     url: https://www.wmapool.net
+    alert_enabled: true
     stratum:
       host: wmapool.net
       port: 19667
@@ -77,6 +86,34 @@ pools:
     shortname: みずたまり
     id: mizutamari
     url: https://bitzeny.mizutamari.work
+    alert_enabled: true
     stratum:
       host: bitzeny-m.mizutamari.work
       port: 19702
+  -
+    name: Knyacki pool
+    shortname: Knyacki
+    id: knyacki
+    url: https://pool.knyacki.xyz
+    alert_enabled: true
+    stratum:
+      host: pool.knyacki.xyz
+      port: 8888
+  -
+    name: bitzeny発掘場　コインラッシュ
+    shortname: コインラッシュ
+    id: coinrush
+    url: http://coinrush.work
+    alert_enabled: true
+    stratum:
+      host: coinrush.work
+      port: 19333
+  -
+    name: とある鯖管理人が運営するBitzeny採掘所
+    shortname: とある鯖管プール
+    id: sabakan
+    url: https://pool1.znymining.net
+    alert_enabled: true
+    stratum:
+      host: pool1.znymining.net
+      port: 19666
