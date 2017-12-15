@@ -45,7 +45,7 @@
     "eqeqeq"          : "error",
     "block-scoped-var": "error",
     "complexity"      : ["error", {
-      "maximum": 10
+      "maximum": 15
     }],
     "curly": "error",
     "default-case": "error",
