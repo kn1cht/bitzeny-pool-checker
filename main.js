@@ -49,14 +49,15 @@ const checkAPI = async(uri) => {
 
 /*** check Stratum Port reachability ***/
 const checkStratum = async(host, port) => {
-  const portStatus = await portscanner.checkPortStatus(port, { 
-    host, 
+  const portStatus = await portscanner.checkPortStatus(port, {
+    host,
     timeout : config.timeout.stratum || 1000
   });
   return portStatus === 'open' ? true : false;
 };
 
 const postTweet = (status) => {
+  if(process.env.DEBUG) { return; }
   bot.post('statuses/update', { status }, (err/*, tweet, response*/) => {
     if (err) { console.error(err); }
   });
@@ -86,7 +87,7 @@ const checkCurrentStatus = async() => {
       text += `Stratumポート: ${current.stratum ? '\u2705 正常' : '\u26a0 停止'}\n`;
       text += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST)\n`;
       console.info(text);
-      postTweet(text);
+      if(pool.alert_enabled) { postTweet(text); }
     }
   }
 };
@@ -108,10 +109,16 @@ const tweetAllStatus = () => {
   postTweet(text);
 }
 
-cron.schedule('*/3 * * * *', () => {
-  checkCurrentStatus();
-});
-
-cron.schedule('0 * * * *', async() => {
+if(process.env.DEBUG) { 
+  checkCurrentStatus(); 
   tweetAllStatus();
-});
+}
+else {
+  cron.schedule('*/3 * * * *', () => {
+    checkCurrentStatus();
+  });
+
+  cron.schedule('0 * * * *', async() => {
+    tweetAllStatus();
+  });
+}
