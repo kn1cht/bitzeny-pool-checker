@@ -108,7 +108,7 @@ if(process.env.DEBUG) {
   tweetAllStatus();
 }
 else {
-  cron.schedule('*/3 * * * *', () => {
+  cron.schedule('*/5 * * * *', () => {
     checkCurrentStatus();
   });
 
