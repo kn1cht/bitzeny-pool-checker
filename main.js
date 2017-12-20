@@ -91,13 +91,14 @@ const tweetAllStatus = () => {
     const status = previousStatus[pool.id];
     text += `${pool.shortname || pool.name} `;
     if(status.api && status.stratum) { text += '\u2705'; }
-    else if(status.stratum) { text += '\u26a0(Web)'; }
-    else if(status.api) { text += '\u26a0(Stratum)'; }
-    else { text += '\u26a0(Web/Stratum)'; }
+    //else if(status.stratum) { text += '\u26a0(Web)'; }
+    //else if(status.api) { text += '\u26a0(Stratum)'; }
+    //else { text += '\u26a0(Web/Stratum)'; }
+    else { text += '\u26a0'; }
     text += '\n';
   }
   text += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST)\n`;
-  text += '#bitzeny #ZNY';
+  text += '#BitZeny';
   console.info(text);
   postTweet(text);
 };
