@@ -59,7 +59,7 @@ pools:
     name: 寛 永 通 宝
     shortname: 寛永通宝
     id: kannei
-    url: https://bitzenypool.work
+    url: https://portal.bitzenypool.work
     alert_enabled: true
     stratum:
       host: bitzenypool.work
