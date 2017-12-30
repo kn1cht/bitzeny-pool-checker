@@ -126,7 +126,7 @@ pools:
     alert_enabled: true
     stratum:
       host: zny.coiner.site
-      port: 9252
+      port: 19666
   -
     name: Hoge Pool - Bitzeny Mining Pool
     shortname: Hoge Pool

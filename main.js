@@ -5,6 +5,7 @@ const config = require('config');
 const cron = require('node-cron');
 const portscanner = require('portscanner');
 const request = require('request');
+const text2png = require('text2png');
 const twitter = require('twitter');
 
 const MAX_RETRY = 3;
@@ -49,8 +50,17 @@ const checkStratum = async(host, port) => {
   return portStatus === 'open' ? true : false;
 };
 
-const postTweet = (status) => {
+const postTweet = async(text, media) => {
   if(process.env.DEBUG) { return; }
+  if(media) {
+    bot.post('media/upload', {media }, (err, res) => {
+      if (err) { console.error(err); }
+      const media_ids = media.media_id_string;
+      bot.post('statuses/update', { status, media_ids }, (err) => {
+        if (err) { console.error(err); }
+      });
+    });
+  }
   bot.post('statuses/update', { status }, (err/*, tweet, response*/) => {
     if (err) { console.error(err); }
   });
@@ -87,20 +97,33 @@ const checkCurrentStatus = async() => {
 
 const tweetAllStatus = () => {
   let text = '【定期】プール稼働状況\n';
+  const okPools = [];
   for(const pool of config.pools) {
     const status = previousStatus[pool.id];
-    text += `${pool.shortname || pool.name} `;
-    if(status.api && status.stratum) { text += '\u2705'; }
-    //else if(status.stratum) { text += '\u26a0(Web)'; }
-    //else if(status.api) { text += '\u26a0(Stratum)'; }
-    //else { text += '\u26a0(Web/Stratum)'; }
-    else { text += '\u26a0'; }
-    text += '\n';
+    if(status.api && status.stratum) { okPools.push(pool.name); }
+    else {
+      text += `${pool.shortname || pool.name} \u26a0`;
+      if(status.stratum) { text += '(Web)'; }
+      else if(status.api) { text += '(Stratum)'; }
+      else { text += '(Web/Stratum)'; }
+      text += '\n';
+    }
   }
-  text += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST)\n`;
-  text += '#BitZeny';
+  if(okPools.length === config.pools.length) { text += '全プールが正常です！\n'; }
+  else { text += `その他${okPools.length}プールが正常\n`; }
+  text += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST)\n#BitZeny`;
+
+  let imageText = `【${okPools.length}プールが正常稼働中】\n`;
+  for(const name of okPools) { imageText += `- ${name}\n`; }
+  imageText += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST @bitzenypoolbot)\n`;
+  
+  const image = text2png(imageText, {
+    localFontPath : 'font/ipagp.ttf',
+    lineSpacing   : 10,
+    bgColor       : 'white'
+  });
   console.info(text);
-  postTweet(text);
+  postTweet(text, image);
 };
 
 if(process.env.DEBUG) {

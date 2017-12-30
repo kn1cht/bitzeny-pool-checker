@@ -23,6 +23,7 @@
     "js-yaml": "^3.10.0",
     "node-cron": "^1.2.1",
     "portscanner": "^2.1.1",
+    "text2png": "git+https://github.com/kn1cht/text2png#add-local-font-path",
     "twitter": "^1.7.1"
   },
   "devDependencies": {
