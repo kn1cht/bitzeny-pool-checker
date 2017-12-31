@@ -111,20 +111,20 @@ const tweetAllStatus = () => {
       text += '\n';
     }
   }
-  if(okPools.length === config.pools.length) { text += '全プールが正常です！\n'; }
+  if(okPools.length === config.pools.length) { text += '全プールが正常です！\u1f38a\n'; }
   else { text += `その他${okPools.length}プールが正常\n`; }
   text += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST)\n#BitZeny`;
+  console.info(text);
 
   let imageText = `【${okPools.length}プールが正常稼働中】\n`;
   for(const name of okPools) { imageText += `- ${name}\n`; }
   imageText += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST @bitzenypoolbot)\n`;
-
+  
   const image = text2png(imageText, {
     localFontPath : 'font/ipagp.ttf',
     lineSpacing   : 10,
     bgColor       : 'white'
   });
-  console.info(text);
   postTweet(text, image);
 };
 

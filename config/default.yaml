@@ -83,7 +83,7 @@ pools:
       host: wmapool.net
       port: 19667
   -
-    name: みずたまり【テスト稼働中】
+    name: みずたまり（bitzenyマイニングプール）
     shortname: みずたまり
     id: mizutamari
     url: https://bitzeny.mizutamari.work
@@ -145,3 +145,35 @@ pools:
     stratum:
       host: m.powerpool.jp
       port: 3333
+  -
+    name: 俺のプール
+    id: orenopool
+    url: https://bitzeny.mypool.tokyo
+    alert_enabled: true
+    stratum:
+      host: bitzeny.mypool.tokyo
+      port: 9334
+  -
+    name: ココアプール（試験運用中）
+    id: cocoa
+    url: https://www.cocoapool.net
+    alert_enabled: true
+    stratum:
+      host: s.cocoapool.net
+      port: 14943
+  -
+    name: ZenyPool
+    id: zenypoolcom
+    url: https://zenypool.com
+    alert_enabled: true
+    stratum:
+      host: zenypool.com
+      port: 4444
+  -
+    name: ぷりぷりぷーる（bitzeny）
+    id: puripuri
+    url: https://puripuripool.tk
+    alert_enabled: true
+    stratum:
+      host: puripuripool.tk
+      port: 18001
