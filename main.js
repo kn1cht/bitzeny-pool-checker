@@ -111,7 +111,7 @@ const tweetAllStatus = () => {
       text += '\n';
     }
   }
-  if(okPools.length === config.pools.length) { text += '全プールが正常です！\u1f38a\n'; }
+  if(okPools.length === config.pools.length) { text += '全プールが正常です！\ud83c\udf8a\n'; }
   else { text += `その他${okPools.length}プールが正常\n`; }
   text += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST)\n#BitZeny`;
   console.info(text);
