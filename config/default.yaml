@@ -37,7 +37,7 @@ pools:
     url: https://bunnymining.work/bitzeny
     alert_enabled: true
     stratum:
-      host: bunnymining.work
+      host: mining.bunnymining.work
       port: 19333
   -
     name: みそスープール

@@ -50,20 +50,22 @@ const checkStratum = async(host, port) => {
   return portStatus === 'open' ? true : false;
 };
 
-const postTweet = async(text, media) => {
+const postTweet = async(status, media) => {
   if(process.env.DEBUG) { return; }
   if(media) {
-    bot.post('media/upload', {media }, (err, res) => {
+    bot.post('media/upload', { media }, (err, res) => {
       if (err) { console.error(err); }
-      const media_ids = media.media_id_string;
+      const media_ids = res.media_id_string;
       bot.post('statuses/update', { status, media_ids }, (err) => {
         if (err) { console.error(err); }
       });
     });
   }
-  bot.post('statuses/update', { status }, (err/*, tweet, response*/) => {
-    if (err) { console.error(err); }
-  });
+  else {
+    bot.post('statuses/update', { status }, (err/*, tweet, response*/) => {
+      if (err) { console.error(err); }
+    });
+  }
 };
 
 const checkCurrentStatus = async() => {
@@ -116,7 +118,7 @@ const tweetAllStatus = () => {
   let imageText = `【${okPools.length}プールが正常稼働中】\n`;
   for(const name of okPools) { imageText += `- ${name}\n`; }
   imageText += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST @bitzenypoolbot)\n`;
-  
+
   const image = text2png(imageText, {
     localFontPath : 'font/ipagp.ttf',
     lineSpacing   : 10,
