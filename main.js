@@ -74,7 +74,7 @@ const checkCurrentStatus = async() => {
     const previous = previousStatus[pool.id];
     const current = { api : false, stratum : false };
     for(let retry = 0; retry < MAX_RETRY; ++retry) {
-      current.api = await checkAPI(pool.url + config.apipath);
+      current.api = await checkAPI(pool.url + (pool.apipath || config.apipath));
       if(current.api) { break; }
     }
     for(let retry = 0; retry < MAX_RETRY; ++retry) {

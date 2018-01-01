@@ -128,15 +128,6 @@ pools:
       host: zny.coiner.site
       port: 19666
   -
-    name: Hoge Pool - Bitzeny Mining Pool
-    shortname: Hoge Pool
-    id: hogepool
-    url: https://hogepool.net
-    alert_enabled: true
-    stratum:
-      host: stratum01.hogepool.net
-      port: 3333
-  -
     name: powerpool for BitZeny
     shortname: powerpool
     id: powerpool
@@ -146,6 +137,24 @@ pools:
       host: m.powerpool.jp
       port: 3333
   -
+    name: Hoge Pool - Bitzeny Mining Pool
+    shortname: Hoge Pool
+    id: hogepool
+    url: https://hogepool.net
+    alert_enabled: true
+    stratum:
+      host: stratum01.hogepool.net
+      port: 3333
+  -
+    name: WPOOL
+    id: wpool
+    url: https://wpool.work
+    apipath: /api/stats
+    alert_enabled: true
+    stratum:
+      host: wpool.work
+      port: 15021
+  -
     name: 俺のプール
     id: orenopool
     url: https://bitzeny.mypool.tokyo
@@ -154,13 +163,40 @@ pools:
       host: bitzeny.mypool.tokyo
       port: 9334
   -
-    name: ココアプール（試験運用中）
+    name: ココアプール
     id: cocoa
     url: https://www.cocoapool.net
     alert_enabled: true
     stratum:
       host: s.cocoapool.net
       port: 14943
+  -
+    name: Daddy-Pool
+    id: daddy
+    url: http://daddy-pool.work
+    apipath: /api/stats
+    alert_enabled: true
+    stratum:
+      host: daddy-pool.work
+      port: 15021
+  -
+    name: Bluepool
+    id: bluepool
+    url: https://bitzeny.bluepool.info
+    apipath: /api/stats
+    alert_enabled: true
+    stratum:
+      host: bitzeny.bluepool.info
+      port: 9999
+  -
+    name: kruptos
+    id: kruptos
+    url: http://mining.bit-univ.jp
+    apipath: /api/stats
+    alert_enabled: true
+    stratum:
+      host: mining.bit-univ.jp
+      port: 43330
   -
     name: ZenyPool
     id: zenypoolcom
