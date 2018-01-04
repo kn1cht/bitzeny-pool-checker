@@ -13,15 +13,6 @@ pools:
       host: jp.lapool.me
       port: 3014
   -
-    name: zeny MDpool
-    shortname: MDpool
-    id: mdpool
-    url: https://zeny.mdpool.info
-    alert_enabled: true
-    stratum:
-      host: zeny.mdpool.info
-      port: 6969
-  -
     name: zeny MDpool(new)
     shortname: MDpool(new)
     id: mdnew
