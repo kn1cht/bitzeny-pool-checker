@@ -46,7 +46,7 @@ const checkStratum = async(host, port) => {
   const portStatus = await portscanner.checkPortStatus(port, {
     host,
     timeout : config.timeout.stratum || 1000
-  });
+  }).catch(err => { return false; });
   return portStatus === 'open' ? true : false;
 };
 
@@ -119,7 +119,7 @@ const tweetAllStatus = () => {
   let imageText = `【${okPools.length}プールが正常稼働中】\n`;
   for(const name of okPools) { imageText += `- ${name}\n`; }
   imageText += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST @bitzenypoolbot)\n`;
-  
+
   const image = text2png(imageText, {
     localFontPath : 'font/ipagp.ttf',
     lineSpacing   : 10,
@@ -137,7 +137,7 @@ else {
     checkCurrentStatus();
   });
 
-  cron.schedule('0 * * * *', async() => {
+  cron.schedule('0 0-23/3', async() => {
     tweetAllStatus();
   });
 }
