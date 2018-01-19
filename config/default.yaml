@@ -198,9 +198,62 @@ pools:
       port: 4444
   -
     name: ぷりぷりぷーる（bitzeny）
+    shortname: ぷりぷりぷーる
     id: puripuri
     url: https://puripuripool.tk
     alert_enabled: true
     stratum:
       host: puripuripool.tk
       port: 18001
+  -
+    name: Happy Miner - BitZeny -
+    shortname: Happy Miner
+    id: happy
+    url: https://zny.happy-miner.cc
+    alert_enabled: true
+    stratum:
+      host: miner.happy-miner.cc
+      port: 3333
+  -
+    name: Pool-chan
+    id: poolchan
+    url: https://pool-chan.me
+    alert_enabled: true
+    stratum:
+      host: pool-chan.me
+      port: 19001
+  -
+    name: bitzeny.work
+    id: bitzenywork
+    url: https://bitzeny.work
+    alert_enabled: true
+    stratum:
+      host: bitzeny.work
+      port: 3034
+  -
+    name: なんかBitZenyっていうイケハヤさん押し草コインのマイニングプール
+    shortname: イケハヤさん押し草コイン
+    id: ikehaya
+    url: https://www.zenymypool.work
+    alert_enabled: true
+    stratum:
+      host: zenymypool.work
+      port: 19666
+  -
+    name: '禅風 : A Bitzeny Mining Pool'
+    shortname: 禅風
+    id: zenpoo
+    url: https://zenpoo.nyem.net
+    alert_enabled: true
+    stratum:
+      host: zenpoo.nyem.net
+      port: 19666
+  -
+    name: Auriga BitZeny Pool
+    shortname: Auriga
+    id: auriga
+    url: https://zeny.auri.ga
+    alert_enabled: true
+    stratum:
+      host: zeny.auri.ga
+      port: 3330

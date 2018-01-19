@@ -137,7 +137,7 @@ else {
     checkCurrentStatus();
   });
 
-  cron.schedule('0 0-23/3', async() => {
+  cron.schedule('0 0-23/3 * * *', async() => {
     tweetAllStatus();
   });
 }
