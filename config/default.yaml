@@ -1,7 +1,8 @@
 apipath: /index.php?page=api&action=public
 timeout:
-  api: 10000
-  stratum: 1000
+  api: 10000 # [ms]
+  stratum: 1000 # [ms]
+hashPowerWarn: 40 # [%]
 pools:
   -
     name: LA Bitzeny Pool

@@ -18,7 +18,7 @@ const bot = new twitter ({
 
 const previousStatus = {};
 for(const pool of config.pools) {
-  previousStatus[pool.id] = { api : true, stratum : true };
+  previousStatus[pool.id] = { api : true, stratum : true, prop : 0 };
 }
 
 /*** check MPOS API reachability ***/
@@ -37,8 +37,7 @@ const checkAPI = async(uri) => {
       else { console.error(err); }
     }
   }
-  if(data.error) { return false; }
-  return true;
+  return data;
 };
 
 /*** check Stratum Port reachability ***/
@@ -74,29 +73,31 @@ const postTweet = async(status, media) => {
 const checkCurrentStatus = async() => {
   for(const pool of config.pools) {
     console.info(`[${new Date()}] Checking ${pool.name}...`);
-    const previous = previousStatus[pool.id];
-    const current = { api : false, stratum : false };
+    const prevStatus = previousStatus[pool.id];
+    const status = { api : false, stratum : false, prop : 0 };
     for(let retry = 0; retry < MAX_RETRY; ++retry) {
-      current.api = await checkAPI(pool.url + (pool.apipath || config.apipath));
-      if(current.api) { break; }
+      const api = await checkAPI(pool.url + (pool.apipath || config.apipath));
+      if(api.error) { continue; }
+      status.api = true;
+      status.prop = api.json.hashrate / api.json.network_hashrate * 1e5; // [%]
     }
     for(let retry = 0; retry < MAX_RETRY; ++retry) {
-      current.stratum = await checkStratum(pool.stratum.host, pool.stratum.port);
-      if(current.stratum) { break; }
+      status.stratum = await checkStratum(pool.stratum.host, pool.stratum.port);
+      if(status.stratum) { break; }
     }
 
-    if(previous.api !== current.api || previous.stratum !== current.stratum) {
-      previousStatus[pool.id] = { api : current.api, stratum : current.stratum };
+    if(prevStatus.api !== status.api || prevStatus.stratum !== status.stratum) {
       let text = '';
-      if(!current.api || !current.stratum) { text += `【鯖落ち】「${pool.name}」に接続障害の可能性\n`; }
+      if(!status.api || !status.stratum) { text += `【鯖落ち】「${pool.name}」に接続障害の可能性\n`; }
       else { text += `【復旧】「${pool.name}」が復帰しました\n`; }
       text += `${pool.url}\n`;
-      text += `Webダッシュボード: ${current.api ? '\u2705 正常' : '\u26a0 停止'}\n`;
-      text += `Stratumポート: ${current.stratum ? '\u2705 正常' : '\u26a0 停止'}\n`;
+      text += `Webダッシュボード: ${status.api ? '\u2705 正常' : '\u26a0 停止'}\n`;
+      text += `Stratumポート: ${status.stratum ? '\u2705 正常' : '\u26a0 停止'}\n`;
       text += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST)\n`;
       console.info(text);
       if(pool.alert_enabled) { postTweet(text); }
     }
+    previousStatus[pool.id] = status;
   }
 };
 
@@ -107,11 +108,15 @@ const tweetAllStatus = () => {
     const status = previousStatus[pool.id];
     if(status.api && status.stratum) { okPools.push(pool.name); }
     else {
-      text += `${pool.shortname || pool.name} \u26a0`;
+      text += `\u26a0 ${pool.shortname || pool.name}にアクセスできません`;
       if(status.stratum) { text += '(Web)'; }
       else if(status.api) { text += '(Stratum)'; }
       else { text += '(Web/Stratum)'; }
       text += '\n';
+    }
+    if(status.prop >= config.hashPowerWarn) {
+      text += `\u2757 ${pool.shortname || pool.name}にハッシュパワーが集中しています`+
+              `(${status.prop.toFixed(1)}%)。分散しましょう！\n`;
     }
   }
   if(okPools.length === config.pools.length) { text += '全プールが正常です！\ud83c\udf8a\n'; }
@@ -120,7 +125,7 @@ const tweetAllStatus = () => {
   console.info(text);
 
   let imageText = `【${okPools.length}プールが正常稼働中】\n`;
-  for(const name of okPools) { imageText += `- ${name}\n`; }
+  for(const name of okPools) { imageText += ` ・${name}\n`; }
   imageText += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST @bitzenypoolbot)\n`;
 
   const image = text2png(imageText, {
