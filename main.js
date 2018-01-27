@@ -46,7 +46,10 @@ const checkStratum = async(host, port) => {
   const portStatus = await portscanner.checkPortStatus(port, {
     host,
     timeout : config.timeout.stratum || 1000
-  }).catch(err => { return false; });
+  }).catch(err => {
+    console.error(err);
+    return false;
+  });
   return portStatus === 'open' ? true : false;
 };
 
@@ -55,8 +58,8 @@ const postTweet = async(status, media) => {
   if(media) {
     bot.post('media/upload', { media }, (err, res) => {
       if (err) { console.error(err); }
-      const media_ids = res.media_id_string;
-      bot.post('statuses/update', { status, media_ids }, (err) => {
+      const mediaIds = res.media_id_string;
+      bot.post('statuses/update', { status, media_ids : mediaIds }, (err) => {
         if (err) { console.error(err); }
       });
     });

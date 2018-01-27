@@ -4,6 +4,7 @@
   "description": "Check whether bitZeny mining pools is up.",
   "main": "main.js",
   "scripts": {
+    "start": "node main.js",
     "test": "npm run lint",
     "lint": "eslint *.js",
     "mocha": "NODE_ENV=test mocha --require intelli-espower-loader",
