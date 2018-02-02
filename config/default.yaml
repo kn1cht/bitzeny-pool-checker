@@ -258,3 +258,12 @@ pools:
     stratum:
       host: zeny.auri.ga
       port: 3330
+  -
+    name: 庶民プール
+    id: shomin
+    url: https://nomp1.arunyastyle.com
+    apipath: /api/stats
+    alert_enabled: true
+    stratum:
+      host: nomp1.arunyastyle.com
+      port: 46491
