@@ -267,3 +267,11 @@ pools:
     stratum:
       host: nomp1.arunyastyle.com
       port: 46491
+  -
+    name: Fi Pool
+    id: fipool
+    url: https://fipool.com
+    alert_enabled: true
+    stratum:
+      host: fipool.com
+      port: 19000

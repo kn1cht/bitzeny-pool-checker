@@ -8,6 +8,8 @@ const request = require('request');
 const text2png = require('text2png');
 const twitter = require('twitter');
 
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+
 const MAX_RETRY = 3;
 const bot = new twitter ({
   consumer_key        : process.env.CONSUMER_KEY,
