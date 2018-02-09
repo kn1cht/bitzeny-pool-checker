@@ -270,8 +270,17 @@ pools:
   -
     name: Fi Pool
     id: fipool
-    url: https://fipool.com
+    url: https://fipool.com/bitzeny
     alert_enabled: true
     stratum:
       host: fipool.com
       port: 19000
+  -
+    name: mofumofu.me
+    id: mofumofu
+    url: https://zny.mofumofu.me
+    apipath: /api/stats
+    alert_enabled: true
+    stratum:
+      host: zny.mofumofu.me
+      port: 3333
