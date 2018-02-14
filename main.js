@@ -97,7 +97,7 @@ const checkCurrentStatus = async() => {
       text += `Stratumポート: ${status.stratum ? '\u2705 正常' : '\u26a0 停止'}\n`;
       text += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST)\n`;
       console.info(text);
-      if(pool.alert_enabled) { postTweet(text); }
+      if(!pool.alert_disabled) { postTweet(text); }
     }
     previousStatus[pool.id] = status;
   }

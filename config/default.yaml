@@ -1,15 +1,14 @@
 apipath: /index.php?page=api&action=public
 timeout:
-  api: 10000 # [ms]
-  stratum: 1000 # [ms]
-hashPowerWarn: 40 # [%]
+  api: 10000
+  stratum: 1000
+hashPowerWarn: 40
 pools:
   -
     name: LA Bitzeny Pool
     shortname: LA Pool
     id: lapool
     url: https://lapool.me/bitzeny
-    alert_enabled: true
     stratum:
       host: jp.lapool.me
       port: 3014
@@ -18,7 +17,6 @@ pools:
     shortname: MDpool(new)
     id: mdnew
     url: https://n-zeny.mdpool.info
-    alert_enabled: true
     stratum:
       host: mining-zeny.mdpool.info
       port: 6962
@@ -27,7 +25,6 @@ pools:
     shortname: うさぎコイン
     id: bunny
     url: https://bunnymining.work/bitzeny
-    alert_enabled: true
     stratum:
       host: bitzeny.bunnymining.work
       port: 19333
@@ -35,7 +32,6 @@ pools:
     name: みそスープール
     id: soupmiso
     url: https://soup.misosi.ru
-    alert_enabled: true
     stratum:
       host: stratum.misosi.ru
       port: 16001
@@ -43,7 +39,6 @@ pools:
     name: 大人の自由研究
     id: otonajiyuu
     url: https://ukkey3.space/bitzeny
-    alert_enabled: true
     stratum:
       host: ukkey3.space
       port: 3333
@@ -52,7 +47,6 @@ pools:
     shortname: 寛永通宝
     id: kannei
     url: https://portal.bitzenypool.work
-    alert_enabled: true
     stratum:
       host: bitzenypool.work
       port: 19666
@@ -61,7 +55,6 @@ pools:
     shortname: 選民プール
     id: senmin
     url: https://zny.arunyastyle.com
-    alert_enabled: true
     stratum:
       host: zny.arunyastyle.com
       port: 19666
@@ -70,7 +63,6 @@ pools:
     shortname: wmapool
     id: wmapool
     url: https://www.wmapool.net
-    alert_enabled: true
     stratum:
       host: wmapool.net
       port: 19667
@@ -79,7 +71,6 @@ pools:
     shortname: みずたまり
     id: mizutamari
     url: https://bitzeny.mizutamari.work
-    alert_enabled: true
     stratum:
       host: bitzeny-m.mizutamari.work
       port: 19702
@@ -88,7 +79,6 @@ pools:
     shortname: Knyacki
     id: knyacki
     url: https://pool.knyacki.xyz
-    alert_enabled: true
     stratum:
       host: pool.knyacki.xyz
       port: 8888
@@ -97,7 +87,6 @@ pools:
     shortname: コインラッシュ
     id: coinrush
     url: http://coinrush.work
-    alert_enabled: true
     stratum:
       host: coinrush.work
       port: 19333
@@ -106,7 +95,6 @@ pools:
     shortname: とある鯖管
     id: sabakan
     url: https://pool1.znymining.net
-    alert_enabled: true
     stratum:
       host: pool1.znymining.net
       port: 19666
@@ -115,7 +103,6 @@ pools:
     shortname: 銭プール
     id: zenypool
     url: https://zny.coiner.site
-    alert_enabled: true
     stratum:
       host: zny.coiner.site
       port: 19666
@@ -124,7 +111,6 @@ pools:
     shortname: powerpool
     id: powerpool
     url: https://zny.powerpool.jp
-    alert_enabled: true
     stratum:
       host: m.powerpool.jp
       port: 3333
@@ -133,7 +119,6 @@ pools:
     shortname: Hoge Pool
     id: hogepool
     url: https://hogepool.net
-    alert_enabled: true
     stratum:
       host: stratum01.hogepool.net
       port: 3333
@@ -142,7 +127,6 @@ pools:
     id: wpool
     url: https://wpool.work
     apipath: /api/stats
-    alert_enabled: true
     stratum:
       host: wpool.work
       port: 15021
@@ -150,7 +134,6 @@ pools:
     name: 俺のプール
     id: orenopool
     url: https://bitzeny.mypool.tokyo
-    alert_enabled: true
     stratum:
       host: bitzeny.mypool.tokyo
       port: 9334
@@ -158,7 +141,6 @@ pools:
     name: ココアプール
     id: cocoa
     url: https://www.cocoapool.net
-    alert_enabled: true
     stratum:
       host: s.cocoapool.net
       port: 14943
@@ -167,7 +149,6 @@ pools:
     id: daddy
     url: http://daddy-pool.work
     apipath: /api/stats
-    alert_enabled: true
     stratum:
       host: daddy-pool.work
       port: 15021
@@ -176,7 +157,6 @@ pools:
     id: bluepool
     url: https://bitzeny.bluepool.info
     apipath: /api/stats
-    alert_enabled: true
     stratum:
       host: bitzeny.bluepool.info
       port: 9999
@@ -185,7 +165,6 @@ pools:
     id: kruptos
     url: http://mining.bit-univ.jp
     apipath: /api/stats
-    alert_enabled: true
     stratum:
       host: mining.bit-univ.jp
       port: 43330
@@ -193,7 +172,6 @@ pools:
     name: ZenyPool
     id: zenypoolcom
     url: https://zenypool.com
-    alert_enabled: true
     stratum:
       host: zenypool.com
       port: 4444
@@ -202,24 +180,13 @@ pools:
     shortname: ぷりぷりぷーる
     id: puripuri
     url: https://puripuripool.tk
-    alert_enabled: true
     stratum:
       host: puripuripool.tk
       port: 18001
   -
-    name: Happy Miner - BitZeny -
-    shortname: Happy Miner
-    id: happy
-    url: https://zny.happy-miner.cc
-    alert_enabled: true
-    stratum:
-      host: miner.happy-miner.cc
-      port: 3333
-  -
     name: Pool-chan
     id: poolchan
     url: https://pool-chan.me
-    alert_enabled: true
     stratum:
       host: pool-chan.me
       port: 19001
@@ -227,7 +194,6 @@ pools:
     name: bitzeny.work
     id: bitzenywork
     url: https://bitzeny.work
-    alert_enabled: true
     stratum:
       host: bitzeny.work
       port: 3034
@@ -236,7 +202,6 @@ pools:
     shortname: イケハヤさん押し草コイン
     id: ikehaya
     url: https://www.zenymypool.work
-    alert_enabled: true
     stratum:
       host: zenymypool.work
       port: 19666
@@ -245,7 +210,6 @@ pools:
     shortname: 禅風
     id: zenpoo
     url: https://zenpoo.nyem.net
-    alert_enabled: true
     stratum:
       host: zenpoo.nyem.net
       port: 19666
@@ -254,7 +218,6 @@ pools:
     shortname: Auriga
     id: auriga
     url: https://zeny.auri.ga
-    alert_enabled: true
     stratum:
       host: zeny.auri.ga
       port: 3330
@@ -263,7 +226,6 @@ pools:
     id: shomin
     url: https://nomp1.arunyastyle.com
     apipath: /api/stats
-    alert_enabled: true
     stratum:
       host: nomp1.arunyastyle.com
       port: 46491
@@ -271,7 +233,6 @@ pools:
     name: Fi Pool
     id: fipool
     url: https://fipool.com/bitzeny
-    alert_enabled: true
     stratum:
       host: fipool.com
       port: 19000
@@ -280,7 +241,6 @@ pools:
     id: mofumofu
     url: https://zny.mofumofu.me
     apipath: /api/stats
-    alert_enabled: true
     stratum:
       host: zny.mofumofu.me
       port: 3333

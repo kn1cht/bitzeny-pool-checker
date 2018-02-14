@@ -1,0 +1,16 @@
+apipath: /index.php?page=api&action=public
+timeout:
+  api: 10000      # [ms]
+  stratum: 1000   # [ms]
+hashPowerWarn: 40 # [%]
+pools:
+  -
+    name: Full Pool Name
+    shortname: Pool Name  # [optional]
+    id: pool              # set unique id please
+    url: https://pool.url
+    apipath: /api/path    # [optional]
+    alert_disabled: false # [optional]
+    stratum:
+      host: stratum.pool.url
+      port: 8888
