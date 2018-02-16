@@ -147,10 +147,10 @@ pools:
   -
     name: Daddy-Pool
     id: daddy
-    url: http://daddy-pool.work
+    url: http://zny.daddy-pool.work
     apipath: /api/stats
     stratum:
-      host: daddy-pool.work
+      host: zny.daddy-pool.work
       port: 15021
   -
     name: Bluepool
