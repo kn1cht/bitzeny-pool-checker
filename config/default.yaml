@@ -131,7 +131,7 @@ pools:
       host: wpool.work
       port: 15021
   -
-    name: 俺のプール
+    name: 俺のプール＠東京店
     id: orenopool
     url: https://bitzeny.mypool.tokyo
     stratum:
@@ -244,3 +244,27 @@ pools:
     stratum:
       host: zny.mofumofu.me
       port: 3333
+  -
+    name: 人のプール
+    id: hitonopool
+    url: http://mining.zinntikumugai.xyz
+    apipath: /api/stats
+    stratum:
+      host: stratum.zinntikumugai.xyz
+      port: 4001
+  -
+    name: SOYMILK-POOL-NOMP
+    id: soymilk
+    url: https://bitzenypool.soymilk.work
+    apipath: /api/stats
+    stratum:
+      host: mining.soymilk.work
+      port: 3052
+  -
+    name: 採掘だよ！全員集合！
+    id: letsmine
+    url: http://letsminezny.orz.hm:8080
+    apipath: /api/stats
+    stratum:
+      host: letsminezny.orz.hm
+      port: 1234
