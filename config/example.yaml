@@ -3,6 +3,7 @@ timeout:
   api: 10000      # [ms]
   stratum: 1000   # [ms]
 hashPowerWarn: 40 # [%]
+maxRetry: 4
 pools:
   -
     name: Full Pool Name

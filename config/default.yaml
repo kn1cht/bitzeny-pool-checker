@@ -3,6 +3,7 @@ timeout:
   api: 10000
   stratum: 1000
 hashPowerWarn: 40
+maxRetry: 4
 pools:
   -
     name: LA Bitzeny Pool
@@ -58,14 +59,6 @@ pools:
     stratum:
       host: zny.arunyastyle.com
       port: 19666
-  -
-    name: wmapool bitzeny(β)
-    shortname: wmapool
-    id: wmapool
-    url: https://www.wmapool.net
-    stratum:
-      host: wmapool.net
-      port: 19667
   -
     name: みずたまり（bitzenyマイニングプール）
     shortname: みずたまり

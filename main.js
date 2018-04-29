@@ -10,7 +10,8 @@ const twitter = require('twitter');
 
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
-const MAX_RETRY = 3;
+const MAX_RETRY = config.maxRetry;
+
 const bot = new twitter ({
   consumer_key        : process.env.CONSUMER_KEY,
   consumer_secret     : process.env.CONSUMER_SECRET,
