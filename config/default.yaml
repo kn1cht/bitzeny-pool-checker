@@ -126,10 +126,11 @@ pools:
   -
     name: 俺のプール＠東京店
     id: orenopool
-    url: https://bitzeny.mypool.tokyo
+    url: https://bitzeny2.mypool.tokyo
+    apipath: /api/stats
     stratum:
-      host: bitzeny.mypool.tokyo
-      port: 9334
+      host: bitzeny2.mypool.tokyo
+      port: 5332
   -
     name: ココアプール
     id: cocoa
