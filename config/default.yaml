@@ -165,10 +165,10 @@ pools:
   -
     name: ZenyPool
     id: zenypoolcom
-    url: https://zenypool.com
+    url: https://hp.zenypool.com
     stratum:
-      host: zenypool.com
-      port: 4444
+      host: hp.zenypool.com
+      port: 7777
   -
     name: ぷりぷりぷーる（bitzeny）
     shortname: ぷりぷりぷーる
