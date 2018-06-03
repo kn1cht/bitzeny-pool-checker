@@ -21,7 +21,7 @@ const bot = new twitter ({
 
 const previousStatus = {};
 for(const pool of config.pools) {
-  previousStatus[pool.id] = { api : true, stratum : true, prop : 0 };
+  previousStatus[pool.id] = { api : true, stratum : true, hashRate : 0 };
 }
 
 /*** check MPOS API reachability ***/
@@ -77,7 +77,8 @@ const checkCurrentStatus = async() => {
   for(const pool of config.pools) {
     console.info(`[${new Date()}] Checking ${pool.name}...`);
     const prevStatus = previousStatus[pool.id];
-    const status = { api : false, stratum : false, prop : 0 };
+    const status = { api : false, stratum : false, hashRate : 0 };
+
     for(let retry = 0; retry < MAX_RETRY; ++retry) {
       const api = await checkAPI(pool.url + (config.apiPath[pool.type]));
       if(api.error) { continue; }
@@ -113,6 +114,11 @@ const checkCurrentStatus = async() => {
 const tweetAllStatus = () => {
   let text = '【定期】プール稼働状況\n';
   const okPools = [];
+  const allHashRate = config.pools.reduce((sum, pool) => {
+    if(!(previousStatus[pool.id]).hashRate) { return sum; }
+    return sum + (previousStatus[pool.id]).hashRate;
+  }, 0);
+
   for(const pool of config.pools) {
     const status = previousStatus[pool.id];
     if(status.api && status.stratum) { okPools.push(pool.name); }
@@ -128,9 +134,10 @@ const tweetAllStatus = () => {
         text += '(Web/Stratum)\n';
       }
     }
-    if(status.prop >= config.hashPowerWarn) {
-      text += `\u2757 ${pool.shortname || pool.name}にハッシュパワーが集中しています`+
-              `(${status.prop.toFixed(1)}%)。分散しましょう！\n`;
+    const prop = 1e2 * status.hashRate / allHashRate;
+    if(prop >= config.hashPowerWarn) {
+      text += `\u2757 ${pool.shortname || pool.name}にハッシュパワーが集中しています`
+            + `(${prop.toFixed(1)}%)。分散しましょう！\n`;
     }
   }
   if(okPools.length === config.pools.length) { text += '全プールが正常です！\ud83c\udf8a\n'; }
@@ -151,8 +158,10 @@ const tweetAllStatus = () => {
 };
 
 if(process.env.DEBUG) {
-  checkCurrentStatus();
-  tweetAllStatus();
+  (async() => {
+    await checkCurrentStatus();
+    tweetAllStatus();
+  })();
 }
 else {
   cron.schedule('*/5 * * * *', () => {
