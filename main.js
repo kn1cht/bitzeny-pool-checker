@@ -79,10 +79,16 @@ const checkCurrentStatus = async() => {
     const prevStatus = previousStatus[pool.id];
     const status = { api : false, stratum : false, prop : 0 };
     for(let retry = 0; retry < MAX_RETRY; ++retry) {
-      const api = await checkAPI(pool.url + (pool.apipath || config.apipath));
+      const api = await checkAPI(pool.url + (config.apiPath[pool.type]));
       if(api.error) { continue; }
       status.api = true;
-      status.prop = api.json.hashrate / api.json.network_hashrate * 1e5; // [%]
+      if(pool.type == 'mpos') {
+        status.hashRate = api.json.hashrate; // [kH/s]
+      }
+      else if(pool.type == 'nomp') {
+        status.hashRate = api.json.algos.yescrypt.hashrate / 1e3; // [kH/s]
+      }
+      break;
     }
     for(let retry = 0; retry < MAX_RETRY; ++retry) {
       status.stratum = await checkStratum(pool.stratum.host, pool.stratum.port);
@@ -93,10 +99,10 @@ const checkCurrentStatus = async() => {
       let text = '';
       if(!status.api || !status.stratum) { text += `【鯖落ち】「${pool.name}」に接続障害の可能性\n`; }
       else { text += `【復旧】「${pool.name}」が復帰しました\n`; }
-      text += `${pool.url}\n`;
-      text += `Webダッシュボード: ${status.api ? '\u2705 正常' : '\u26a0 停止'}\n`;
-      text += `Stratumポート: ${status.stratum ? '\u2705 正常' : '\u26a0 停止'}\n`;
-      text += `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST)\n`;
+      text += `${pool.url}\n`
+            + `Webダッシュボード: ${status.api ? '\u2705 正常' : '\u26a0 停止'}\n`
+            + `Stratumポート: ${status.stratum ? '\u2705 正常' : '\u26a0 停止'}\n`
+            + `(${(new Date()).toFormat('YYYY/MM/DD HH24:MI:SS')} JST)\n`;
       console.info(text);
       if(!pool.alert_disabled) { postTweet(text); }
     }
@@ -112,10 +118,15 @@ const tweetAllStatus = () => {
     if(status.api && status.stratum) { okPools.push(pool.name); }
     else {
       text += `\u26a0 ${pool.shortname || pool.name}にアクセスできません`;
-      if(status.stratum) { text += '(Web)'; }
-      else if(status.api) { text += '(Stratum)'; }
-      else { text += '(Web/Stratum)'; }
-      text += '\n';
+      if(status.stratum) {
+        text += '(Web)\n';
+      }
+      else if(status.api) {
+        text += '(Stratum)\n';
+      }
+      else {
+        text += '(Web/Stratum)\n';
+      }
     }
     if(status.prop >= config.hashPowerWarn) {
       text += `\u2757 ${pool.shortname || pool.name}にハッシュパワーが集中しています`+

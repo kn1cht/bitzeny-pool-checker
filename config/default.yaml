@@ -1,4 +1,6 @@
-apipath: /index.php?page=api&action=public
+apiPath:
+  mpos: /index.php?page=api&action=public
+  nomp: /api/stats
 timeout:
   api: 10000
   stratum: 1000
@@ -10,6 +12,7 @@ pools:
     shortname: LA Pool
     id: lapool
     url: https://lapool.me/bitzeny
+    type: mpos
     stratum:
       host: jp.lapool.me
       port: 3014
@@ -18,6 +21,7 @@ pools:
     shortname: MDpool(new)
     id: mdnew
     url: https://n-zeny.mdpool.info
+    type: mpos
     stratum:
       host: mining-zeny.mdpool.info
       port: 6962
@@ -26,6 +30,7 @@ pools:
     shortname: うさぎコイン
     id: bunny
     url: https://bunnymining.work/bitzeny
+    type: mpos
     stratum:
       host: bitzeny.bunnymining.work
       port: 19333
@@ -33,6 +38,7 @@ pools:
     name: みそスープール
     id: soupmiso
     url: https://soup.misosi.ru
+    type: mpos
     stratum:
       host: stratum.misosi.ru
       port: 16001
@@ -40,6 +46,7 @@ pools:
     name: 大人の自由研究
     id: otonajiyuu
     url: https://ukkey3.space/bitzeny
+    type: mpos
     stratum:
       host: ukkey3.space
       port: 3333
@@ -48,6 +55,7 @@ pools:
     shortname: 寛永通宝
     id: kannei
     url: https://portal.bitzenypool.work
+    type: mpos
     stratum:
       host: bitzenypool.work
       port: 19666
@@ -56,6 +64,7 @@ pools:
     shortname: 選民プール
     id: senmin
     url: https://zny.arunyastyle.com
+    type: mpos
     stratum:
       host: zny.arunyastyle.com
       port: 19666
@@ -64,6 +73,7 @@ pools:
     shortname: みずたまり
     id: mizutamari
     url: https://bitzeny.mizutamari.work
+    type: mpos
     stratum:
       host: bitzeny-m.mizutamari.work
       port: 19702
@@ -72,6 +82,7 @@ pools:
     shortname: Knyacki
     id: knyacki
     url: https://pool.knyacki.xyz
+    type: mpos
     stratum:
       host: pool.knyacki.xyz
       port: 8888
@@ -80,6 +91,7 @@ pools:
     shortname: コインラッシュ
     id: coinrush
     url: http://coinrush.work
+    type: mpos
     stratum:
       host: coinrush.work
       port: 19333
@@ -88,6 +100,7 @@ pools:
     shortname: とある鯖管
     id: sabakan
     url: https://pool1.znymining.net
+    type: mpos
     stratum:
       host: pool1.znymining.net
       port: 19666
@@ -96,6 +109,7 @@ pools:
     shortname: 銭プール
     id: zenypool
     url: https://zny.coiner.site
+    type: mpos
     stratum:
       host: zny.coiner.site
       port: 19666
@@ -104,6 +118,7 @@ pools:
     shortname: powerpool
     id: powerpool
     url: https://zny.powerpool.jp
+    type: mpos
     stratum:
       host: m.powerpool.jp
       port: 3333
@@ -112,6 +127,7 @@ pools:
     shortname: Hoge Pool
     id: hogepool
     url: https://hogepool.net
+    type: mpos
     stratum:
       host: stratum01.hogepool.net
       port: 3333
@@ -119,7 +135,7 @@ pools:
     name: WPOOL
     id: wpool
     url: https://wpool.work
-    apipath: /api/stats
+    type: nomp
     stratum:
       host: wpool.work
       port: 15021
@@ -127,7 +143,7 @@ pools:
     name: 俺のプール＠東京店
     id: orenopool
     url: https://bitzeny2.mypool.tokyo
-    apipath: /api/stats
+    type: nomp
     stratum:
       host: bitzeny2.mypool.tokyo
       port: 5332
@@ -135,6 +151,7 @@ pools:
     name: ココアプール
     id: cocoa
     url: https://www.cocoapool.net
+    type: mpos
     stratum:
       host: s.cocoapool.net
       port: 14943
@@ -142,7 +159,7 @@ pools:
     name: Daddy-Pool
     id: daddy
     url: http://zny.daddy-pool.work
-    apipath: /api/stats
+    type: nomp
     stratum:
       host: zny.daddy-pool.work
       port: 15021
@@ -150,7 +167,7 @@ pools:
     name: Bluepool
     id: bluepool
     url: https://bitzeny.bluepool.info
-    apipath: /api/stats
+    type: nomp
     stratum:
       host: bitzeny.bluepool.info
       port: 9999
@@ -158,7 +175,7 @@ pools:
     name: kruptos
     id: kruptos
     url: http://mining.bit-univ.jp
-    apipath: /api/stats
+    type: nomp
     stratum:
       host: mining.bit-univ.jp
       port: 43330
@@ -166,6 +183,7 @@ pools:
     name: ZenyPool
     id: zenypoolcom
     url: https://hp.zenypool.com
+    type: mpos
     stratum:
       host: hp.zenypool.com
       port: 7777
@@ -174,6 +192,7 @@ pools:
     shortname: ぷりぷりぷーる
     id: puripuri
     url: https://puripuripool.tk
+    type: mpos
     stratum:
       host: puripuripool.tk
       port: 18001
@@ -181,6 +200,7 @@ pools:
     name: Pool-chan
     id: poolchan
     url: https://pool-chan.me
+    type: mpos
     stratum:
       host: pool-chan.me
       port: 19001
@@ -188,6 +208,7 @@ pools:
     name: bitzeny.work
     id: bitzenywork
     url: https://bitzeny.work
+    type: mpos
     stratum:
       host: bitzeny.work
       port: 3034
@@ -196,6 +217,7 @@ pools:
     shortname: イケハヤさん押し草コイン
     id: ikehaya
     url: https://www.zenymypool.work
+    type: mpos
     stratum:
       host: zenymypool.work
       port: 19666
@@ -204,6 +226,7 @@ pools:
     shortname: 禅風
     id: zenpoo
     url: https://zenpoo.nyem.net
+    type: mpos
     stratum:
       host: zenpoo.nyem.net
       port: 19666
@@ -212,6 +235,7 @@ pools:
     shortname: Auriga
     id: auriga
     url: https://zeny.auri.ga
+    type: mpos
     stratum:
       host: zeny.auri.ga
       port: 3330
@@ -219,7 +243,7 @@ pools:
     name: 庶民プール
     id: shomin
     url: https://nomp1.arunyastyle.com
-    apipath: /api/stats
+    type: nomp
     stratum:
       host: nomp1.arunyastyle.com
       port: 46491
@@ -227,6 +251,7 @@ pools:
     name: Fi Pool
     id: fipool
     url: https://fipool.com/bitzeny
+    type: mpos
     stratum:
       host: fipool.com
       port: 19000
@@ -234,7 +259,7 @@ pools:
     name: mofumofu.me
     id: mofumofu
     url: https://zny.mofumofu.me
-    apipath: /api/stats
+    type: nomp
     stratum:
       host: zny.mofumofu.me
       port: 3333
@@ -242,7 +267,7 @@ pools:
     name: 人のプール
     id: hitonopool
     url: http://mining.zinntikumugai.xyz
-    apipath: /api/stats
+    type: nomp
     stratum:
       host: stratum.zinntikumugai.xyz
       port: 4001
@@ -250,7 +275,7 @@ pools:
     name: 採掘だよ！全員集合！
     id: letsmine
     url: http://letsminezny.orz.hm:8080
-    apipath: /api/stats
+    type: nomp
     stratum:
       host: letsminezny.orz.hm
       port: 1234
