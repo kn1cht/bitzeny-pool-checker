@@ -279,3 +279,19 @@ pools:
     stratum:
       host: letsminezny.orz.hm
       port: 1234
+  -
+    name: Exampool
+    id: exampool
+    url: https://zny.xmpool.net
+    type: mpos
+    stratum:
+      host: fipool.com
+      port: 19000
+  -
+    name: NOMP.ZNY.POWERPOOL
+    id: nomppower
+    url: https://nomp.zny.powerpool.jp
+    type: nomp
+    stratum:
+      host: nomp.zny.powerpool.jp
+      port: 16030
