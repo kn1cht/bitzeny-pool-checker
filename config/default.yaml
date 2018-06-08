@@ -132,14 +132,6 @@ pools:
       host: stratum01.hogepool.net
       port: 3333
   -
-    name: WPOOL
-    id: wpool
-    url: https://wpool.work
-    type: nomp
-    stratum:
-      host: wpool.work
-      port: 15021
-  -
     name: 俺のプール＠東京店
     id: orenopool
     url: https://bitzeny2.mypool.tokyo
@@ -295,3 +287,4 @@ pools:
     stratum:
       host: nomp.zny.powerpool.jp
       port: 16030
+
