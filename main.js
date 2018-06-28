@@ -123,7 +123,7 @@ const tweetAllStatus = () => {
     const status = previousStatus[pool.id];
     if(status.api && status.stratum) { okPools.push(pool.name); }
     else {
-      text += `\u26a0 ${pool.shortname || pool.name}にアクセスできません`;
+      text += `\u26a0 ${pool.shortname || pool.name}`;
       if(status.stratum) {
         text += '(Web)\n';
       }
