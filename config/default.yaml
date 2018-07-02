@@ -60,15 +60,6 @@ pools:
       host: bitzenypool.work
       port: 19666
   -
-    name: BitZeny選民プール
-    shortname: 選民プール
-    id: senmin
-    url: https://zny.arunyastyle.com
-    type: mpos
-    stratum:
-      host: zny.arunyastyle.com
-      port: 19666
-  -
     name: みずたまり（bitzenyマイニングプール）
     shortname: みずたまり
     id: mizutamari
@@ -231,14 +222,6 @@ pools:
     stratum:
       host: zeny.auri.ga
       port: 3330
-  -
-    name: 庶民プール
-    id: shomin
-    url: https://nomp1.arunyastyle.com
-    type: nomp
-    stratum:
-      host: nomp1.arunyastyle.com
-      port: 46491
   -
     name: Fi Pool
     id: fipool
