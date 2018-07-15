@@ -28,8 +28,8 @@
       "error",
       "always"
     ],
-    "camelcase" : ["error", {
-      "properties" : "never"
+    "camelcase" : ["warn", {
+      "properties" : "always"
     }],
     "key-spacing": ["error", {
         "singleLine" : {
@@ -44,9 +44,7 @@
       }],
     "eqeqeq"          : "error",
     "block-scoped-var": "error",
-    "complexity"      : ["error", {
-      "maximum": 15
-    }],
+    "complexity"      : "error",
     "curly": "error",
     "default-case": "error",
     "dot-location": ["error", "property"],

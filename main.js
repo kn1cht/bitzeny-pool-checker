@@ -83,10 +83,10 @@ const checkCurrentStatus = async() => {
       const api = await checkAPI(pool.url + (config.apiPath[pool.type]));
       if(api.error) { continue; }
       status.api = true;
-      if(pool.type == 'mpos') {
+      if(pool.type === 'mpos') {
         status.hashRate = api.json.hashrate; // [kH/s]
       }
-      else if(pool.type == 'nomp') {
+      else if(pool.type === 'nomp') {
         status.hashRate = api.json.algos.yescrypt.hashrate / 1e3; // [kH/s]
       }
       break;
