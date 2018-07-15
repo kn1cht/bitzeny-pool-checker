@@ -50,15 +50,15 @@ pools:
     stratum:
       host: ukkey3.space
       port: 3333
-  -
-    name: 寛 永 通 宝
-    shortname: 寛永通宝
-    id: kannei
-    url: https://portal.bitzenypool.work
-    type: mpos
-    stratum:
-      host: bitzenypool.work
-      port: 19666
+#  -
+#    name: 寛 永 通 宝
+#    shortname: 寛永通宝
+#    id: kannei
+#    url: https://portal.bitzenypool.work
+#    type: mpos
+#    stratum:
+#      host: bitzenypool.work
+#      port: 19666
   -
     name: みずたまり（bitzenyマイニングプール）
     shortname: みずたまり
@@ -77,15 +77,6 @@ pools:
     stratum:
       host: pool.knyacki.xyz
       port: 8888
-  -
-    name: bitzeny発掘場　コインラッシュ
-    shortname: コインラッシュ
-    id: coinrush
-    url: http://coinrush.work
-    type: mpos
-    stratum:
-      host: coinrush.work
-      port: 19333
   -
     name: とある鯖管理人が運営するBitzeny採掘所
     shortname: とある鯖管
@@ -222,14 +213,6 @@ pools:
     stratum:
       host: zeny.auri.ga
       port: 3330
-  -
-    name: Fi Pool
-    id: fipool
-    url: https://fipool.com/bitzeny
-    type: mpos
-    stratum:
-      host: fipool.com
-      port: 19000
   -
     name: mofumofu.me
     id: mofumofu
