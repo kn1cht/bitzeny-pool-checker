@@ -1,4 +1,4 @@
-# bitZeny Pool Checker
+# bitZeny Pool Checker [![Build Status](https://travis-ci.org/kn1cht/bitzeny-pool-checker.svg?branch=master)](https://travis-ci.org/kn1cht/bitzeny-pool-checker)
 Check whether bitZeny mining pools is up and share information on Twitter.
 
 Account: [bitzenypoolbot](https://twitter.com/bitzenypoolbot)
@@ -20,3 +20,4 @@ Use [`forever`](https://github.com/foreverjs/forever) to run in background.
 ```bash
 DEBUG=1 node main.js
 ```
+
