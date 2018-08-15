@@ -171,14 +171,6 @@ pools:
       host: puripuripool.tk
       port: 18001
   -
-    name: Pool-chan
-    id: poolchan
-    url: https://pool-chan.me
-    type: mpos
-    stratum:
-      host: pool-chan.me
-      port: 19001
-  -
     name: bitzeny.work
     id: bitzenywork
     url: https://bitzeny.work
