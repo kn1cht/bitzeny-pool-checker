@@ -69,15 +69,6 @@ pools:
       host: bitzeny-m.mizutamari.work
       port: 19702
   -
-    name: Knyacki pool
-    shortname: Knyacki
-    id: knyacki
-    url: https://pool.knyacki.xyz
-    type: mpos
-    stratum:
-      host: pool.knyacki.xyz
-      port: 8888
-  -
     name: とある鯖管理人が運営するBitzeny採掘所
     shortname: とある鯖管
     id: sabakan
