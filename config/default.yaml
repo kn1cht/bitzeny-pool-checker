@@ -162,14 +162,6 @@ pools:
       host: puripuripool.tk
       port: 18001
   -
-    name: bitzeny.work
-    id: bitzenywork
-    url: https://bitzeny.work
-    type: mpos
-    stratum:
-      host: bitzeny.work
-      port: 3034
-  -
     name: なんかBitZenyっていうイケハヤさん押し草コインのマイニングプール
     shortname: イケハヤさん押し草コイン
     id: ikehaya
