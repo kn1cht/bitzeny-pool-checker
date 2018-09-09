@@ -129,14 +129,6 @@ pools:
       host: zny.daddy-pool.work
       port: 15021
   -
-    name: Bluepool
-    id: bluepool
-    url: https://bitzeny.bluepool.info
-    type: nomp
-    stratum:
-      host: bitzeny.bluepool.info
-      port: 9999
-  -
     name: kruptos
     id: kruptos
     url: http://mining.bit-univ.jp
@@ -145,7 +137,7 @@ pools:
       host: mining.bit-univ.jp
       port: 43330
   -
-    name: ZenyPool
+    name: ZenyPool(New)
     id: zenypoolcom
     url: https://hp.zenypool.com
     type: mpos
@@ -213,14 +205,6 @@ pools:
       host: letsminezny.orz.hm
       port: 1234
   -
-    name: Exampool
-    id: exampool
-    url: https://zny.xmpool.net
-    type: mpos
-    stratum:
-      host: fipool.com
-      port: 19000
-  -
     name: NOMP.ZNY.POWERPOOL
     id: nomppower
     url: https://nomp.zny.powerpool.jp
@@ -228,4 +212,43 @@ pools:
     stratum:
       host: nomp.zny.powerpool.jp
       port: 16030
-
+  -
+    name: みんなのプール
+    id: minnano
+    url: https://www.minnano-pool.work
+    type: nomp
+    stratum:
+      host: stratum.minnano-pool.work
+      port: 3030
+  -
+    name: macyan.net
+    id: macyan
+    url: http://macyan.net:8080
+    type: nomp
+    stratum:
+      host: macyan.net
+      port: 3032
+  -
+    name: SEMI-POOL
+    id: semi
+    url: https://zny.semi-pool.com
+    type: nomp
+    stratum:
+      host: zny.semi-pool.com
+      port: 3333
+  -
+    name: ゼニー採掘所
+    id: zenymining
+    url: https://zenymining.work
+    type: mpos
+    stratum:
+      host: zenymining.work
+      port: 19666
+  -
+    name: Fi Pool
+    id: fipool
+    url: https://fipool.com/bitzeny
+    type: mpos
+    stratum:
+      host: fipool.com
+      port: 19000
