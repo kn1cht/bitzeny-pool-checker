@@ -1,6 +1,7 @@
 apiPath:
   mpos: /index.php?page=api&action=public
   nomp: /api/stats
+  yiimp: /api
 timeout:
   api: 10000
   stratum: 1000
@@ -244,3 +245,11 @@ pools:
     stratum:
       host: fipool.com
       port: 19000
+  -
+    name: pecadol pool
+    id: pecadol
+    url: https://pool.pecadol.xyz
+    type: yiimp
+    stratum:
+      host: pool.pecadol.xyz
+      port: 6383
