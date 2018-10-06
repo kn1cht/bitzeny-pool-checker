@@ -237,14 +237,6 @@ pools:
       host: zny.semi-pool.com
       port: 3333
   -
-    name: ゼニー採掘所
-    id: zenymining
-    url: https://zenymining.work
-    type: mpos
-    stratum:
-      host: zenymining.work
-      port: 19666
-  -
     name: Fi Pool
     id: fipool
     url: https://fipool.com/bitzeny
