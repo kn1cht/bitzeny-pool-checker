@@ -119,7 +119,7 @@ const checkCurrentStatus = async() => {
 };
 
 const tweetAllStatus = () => {
-  let text = '【定期】プール稼働状況\n';
+  let text = '【定期】接続ができないプール(脆弱性未対応を含む)\n';
   const okPools = [];
   const allHashRate = config.pools.reduce((sum, pool) => {
     if(!(previousStatus[pool.id]).hashRate) { return sum; }
@@ -130,7 +130,8 @@ const tweetAllStatus = () => {
     const status = previousStatus[pool.id];
     if(status.api && status.stratum) { okPools.push(pool.name); }
     else {
-      text += `\u26a0 ${pool.shortname || pool.name}`;
+      text += `\u26a0 ${pool.shortname || pool.name}\n`;
+      /*
       if(status.stratum) {
         text += '(Web)\n';
       }
@@ -140,6 +141,7 @@ const tweetAllStatus = () => {
       else {
         text += '(Web/Stratum)\n';
       }
+      */
     }
     const prop = 1e2 * status.hashRate / allHashRate;
     if(prop >= config.hashPowerWarn) {
