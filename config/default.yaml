@@ -36,14 +36,6 @@ pools:
       host: bitzeny.bunnymining.work
       port: 19333
   -
-    name: みそスープール
-    id: soupmiso
-    url: https://soup.misosi.ru
-    type: mpos
-    stratum:
-      host: stratum.misosi.ru
-      port: 16001
-  -
     name: 大人の自由研究
     id: otonajiyuu
     url: https://ukkey3.space/bitzeny
@@ -137,14 +129,6 @@ pools:
     stratum:
       host: mining.bit-univ.jp
       port: 43330
-  -
-    name: ZenyPool(New)
-    id: zenypoolcom
-    url: https://hp.zenypool.com
-    type: mpos
-    stratum:
-      host: hp.zenypool.com
-      port: 7777
   -
     name: ぷりぷりぷーる（bitzeny）
     shortname: ぷりぷりぷーる
