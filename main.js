@@ -173,11 +173,11 @@ if(process.env.DEBUG) {
   })();
 }
 else {
-  cron.schedule('*/5 * * * *', () => {
+  cron.schedule(`*/${config.cron.check} * * * *`, () => {
     checkCurrentStatus();
   });
 
-  cron.schedule('0 0-23/3 * * *', async() => {
+  cron.schedule(`0 0-23/${config.cron.tweet} * * *`, async() => {
     tweetAllStatus();
   });
 }

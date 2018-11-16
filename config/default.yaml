@@ -7,6 +7,9 @@ timeout:
   stratum: 1000
 hashPowerWarn: 40
 maxRetry: 4
+cron:
+  check: 5
+  tweet: 3
 pools:
   -
     name: LA Bitzeny Pool

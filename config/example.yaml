@@ -1,11 +1,15 @@
 apiPath:
   mpos: /index.php?page=api&action=public
   nomp: /api/stats
+  yiimp: /api
 timeout:
   api: 10000      # [ms]
   stratum: 1000   # [ms]
 hashPowerWarn: 40 # [%]
 maxRetry: 4
+cron:
+  check: 5 # [min]
+  tweet: 3 # [hour]
 pools:
   -
     name: Full Pool Name
