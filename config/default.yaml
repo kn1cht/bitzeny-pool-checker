@@ -107,7 +107,7 @@ pools:
     type: nomp
     stratum:
       host: bitzeny2.mypool.tokyo
-      port: 5332
+      port: 5333
   -
     name: ココアプール
     id: cocoa
@@ -124,14 +124,6 @@ pools:
     stratum:
       host: zny.daddy-pool.work
       port: 15021
-  -
-    name: kruptos
-    id: kruptos
-    url: http://mining.bit-univ.jp
-    type: nomp
-    stratum:
-      host: mining.bit-univ.jp
-      port: 43330
   -
     name: ぷりぷりぷーる（bitzeny）
     shortname: ぷりぷりぷーる
