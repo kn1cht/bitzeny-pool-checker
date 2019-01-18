@@ -1,4 +1,4 @@
-# bitZeny Pool Checker [![Build Status](https://travis-ci.org/kn1cht/bitzeny-pool-checker.svg?branch=master)](https://travis-ci.org/kn1cht/bitzeny-pool-checker)
+# bitZeny Pool Checker [![Build Status](https://travis-ci.org/kn1cht/bitzeny-pool-checker.svg?branch=master)](https://travis-ci.org/kn1cht/bitzeny-pool-checker) [![Greenkeeper badge](https://badges.greenkeeper.io/kn1cht/bitzeny-pool-checker.svg)](https://greenkeeper.io/)
 Check whether bitZeny mining pools is up and share information on Twitter.
 
 Account: [bitzenypoolbot](https://twitter.com/bitzenypoolbot)
