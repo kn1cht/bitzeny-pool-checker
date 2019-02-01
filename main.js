@@ -80,7 +80,7 @@ const checkCurrentStatus = async() => {
     const status = { api : false, stratum : false, hashRate : 0 };
 
     for(let retry = 0; retry < MAX_RETRY; ++retry) {
-      const api = await checkAPI(pool.url + (config.apiPath[pool.type]));
+      const api = await checkAPI(pool.api_url || (pool.url + (config.apiPath[pool.type])));
       if(api.error) { continue; }
       status.api = true;
       switch(pool.type) {

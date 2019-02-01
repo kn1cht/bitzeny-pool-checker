@@ -16,6 +16,7 @@ pools:
     shortname: Pool Name  # [optional]
     id: pool              # set unique id please
     url: https://pool.url
+    api_url: https//pool.url/api # [optional]
     type: mpos            # 'mpos' or 'nomp'
     alert_disabled: false # [optional]
     stratum:

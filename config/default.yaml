@@ -101,14 +101,6 @@ pools:
       host: stratum01.hogepool.net
       port: 3333
   -
-    name: 俺のプール＠東京店
-    id: orenopool
-    url: https://bitzeny2.mypool.tokyo
-    type: nomp
-    stratum:
-      host: bitzeny2.mypool.tokyo
-      port: 5333
-  -
     name: ココアプール
     id: cocoa
     url: https://www.cocoapool.net
@@ -151,15 +143,6 @@ pools:
     stratum:
       host: zenpoo.nyem.net
       port: 19666
-  -
-    name: Auriga BitZeny Pool
-    shortname: Auriga
-    id: auriga
-    url: https://zeny.auri.ga
-    type: mpos
-    stratum:
-      host: zeny.auri.ga
-      port: 3330
   -
     name: mofumofu.me
     id: mofumofu
@@ -240,4 +223,21 @@ pools:
     stratum:
       host: cryptogrinder.com
       port: 9002
+  -
+    name: Zergpool
+    id: zergpool
+    url: https://zergpool.com
+    api_url: http://api.zergpool.com:8080/api/status
+    type: yiimp
+    stratum:
+      host: yescryptR8.mine.zergpool.com
+      port: 6323
+  -
+    name: ZPOOL
+    id: zpool
+    url: https://www.zpool.ca
+    type: yiimp
+    stratum:
+      host: yescryptR8.jp.mine.zpool.ca
+      port: 6323
 
