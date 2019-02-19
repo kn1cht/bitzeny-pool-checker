@@ -74,15 +74,6 @@ pools:
       host: pool1.znymining.net
       port: 19666
   -
-    name: 銭プール（ZNY）
-    shortname: 銭プール
-    id: zenypool
-    url: https://zny.coiner.site
-    type: mpos
-    stratum:
-      host: zny.coiner.site
-      port: 19666
-  -
     name: powerpool for BitZeny
     shortname: powerpool
     id: powerpool
@@ -162,7 +153,7 @@ pools:
   -
     name: 採掘だよ！全員集合！
     id: letsmine
-    url: http://letsminezny.orz.hm:8080
+    url: http://letsminezny.orz.hm
     type: nomp
     stratum:
       host: letsminezny.orz.hm
