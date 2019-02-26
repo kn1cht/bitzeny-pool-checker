@@ -87,10 +87,11 @@ const checkCurrentStatus = async() => {
       case 'mpos':
         status.hashRate = api.json.hashrate; // [kH/s]
         break;
-      case 'nomp':
+      case 'nomp': {
         const algos = api.json.algos;
         status.hashRate = (algos.yescryptR8 ? algos.yescryptR8 : algos.yescrypt).hashrate / 1e3; // [kH/s]
         break;
+      }
       case 'yiimp':
         status.hashRate = api.json.yescryptR8.hashrate / 1e3; // [kH/s]
         break;
