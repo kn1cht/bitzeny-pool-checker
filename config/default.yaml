@@ -155,6 +155,7 @@ pools:
     id: letsmine
     url: http://letsminezny.orz.hm
     type: nomp
+    alert_disabled: true
     stratum:
       host: letsminezny.orz.hm
       port: 1234
