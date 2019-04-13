@@ -108,15 +108,6 @@ pools:
       host: zny.daddy-pool.work
       port: 15021
   -
-    name: ぷりぷりぷーる（bitzeny）
-    shortname: ぷりぷりぷーる
-    id: puripuri
-    url: https://puripuripool.tk
-    type: mpos
-    stratum:
-      host: puripuripool.tk
-      port: 18001
-  -
     name: なんかBitZenyっていうイケハヤさん押し草コインのマイニングプール
     shortname: イケハヤさん押し草コイン
     id: ikehaya
