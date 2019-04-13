@@ -109,6 +109,8 @@ const checkCurrentStatus = async() => {
       let text = '';
       if(!status.api || !status.stratum) { text += `【鯖落ち】「${pool.name}」に接続障害の可能性\n`; }
       else { text += `【復旧】「${pool.name}」が復帰しました\n`; }
+      text += `${pool.message ? pool.message : ''}\n`;
+
       text += `${pool.url}\n`
             + `Webダッシュボード: ${status.api ? '\u2705 正常' : '\u26a0 停止'}\n`
             + `Stratumポート: ${status.stratum ? '\u2705 正常' : '\u26a0 停止'}\n`
@@ -134,14 +136,15 @@ const tweetAllStatus = () => {
     else {
       text += `\u26a0 ${pool.shortname || pool.name}`;
       if(status.stratum) {
-        text += '(Web)\n';
+        text += '(Web';
       }
       else if(status.api) {
-        text += '(Stratum)\n';
+        text += '(Stratum';
       }
       else {
-        text += '(Web/Stratum)\n';
+        text += '(Web/Stratum';
       }
+      text += ` ${pool.message_summary ? pool.message_summary : ''})\n`;
     }
     const prop = 1e2 * status.hashRate / allHashRate;
     if(prop >= config.hashPowerWarn) {

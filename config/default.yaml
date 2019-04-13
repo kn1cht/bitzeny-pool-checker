@@ -35,6 +35,8 @@ pools:
     id: bunny
     url: https://bunnymining.work/bitzeny
     type: mpos
+    message: （メンテナンス予定：4/18 14:00-20:00）
+    message_summary: 4/18 20時までメンテ
     stratum:
       host: bitzeny.bunnymining.work
       port: 19333

@@ -19,6 +19,8 @@ pools:
     api_url: https//pool.url/api # [optional]
     type: mpos            # 'mpos' or 'nomp'
     alert_disabled: false # [optional]
+    message: （メンテナンスが予定されています） # [optional]
+    message_summary: 18時までメンテ # [optional]
     stratum:
       host: stratum.pool.url
       port: 8888
