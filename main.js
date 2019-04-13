@@ -144,7 +144,7 @@ const tweetAllStatus = () => {
       else {
         text += '(Web/Stratum';
       }
-      text += ` ${pool.message_summary ? pool.message_summary : ''})\n`;
+      text += `${pool.message_summary ? ' ' + pool.message_summary : ''})\n`;
     }
     const prop = 1e2 * status.hashRate / allHashRate;
     if(prop >= config.hashPowerWarn) {
