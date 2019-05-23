@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - node
+  - 11
 script:
   - "npm test"
     #after_success:
@@ -14,4 +14,5 @@ addons:
       - libjpeg8-dev
       - libpango1.0-dev
       - libgif-dev
+      - librsvg2-dev
       - g++-4.9
