@@ -159,14 +159,6 @@ pools:
       host: nomp.zny.powerpool.jp
       port: 16030
   -
-    name: みんなのプール
-    id: minnano
-    url: https://www.minnano-pool.work
-    type: nomp
-    stratum:
-      host: stratum.minnano-pool.work
-      port: 3030
-  -
     name: macyan.net
     id: macyan
     url: http://macyan.net:8080
@@ -223,4 +215,19 @@ pools:
     stratum:
       host: yescryptR8.jp.mine.zpool.ca
       port: 6323
-
+  -
+    name: LeyWa Mining Pool
+    id: leywa
+    url: https://leywapool.com
+    type: yiimp
+    stratum:
+      host: leywapool.com
+      port: 6243
+  -
+    name: MJ-COIN
+    id: mjcoin
+    url: http://mj-coin.xyz
+    type: nomp
+    stratum:
+      host: mj-coin.xyz
+      port: 3031

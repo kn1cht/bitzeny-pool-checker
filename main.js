@@ -74,8 +74,8 @@ const postTweet = async(status, media) => {
 };
 
 const checkCurrentStatus = async() => {
+  console.info(`[${new Date()}] Checking pools...`);
   for(const pool of config.pools) {
-    console.info(`[${new Date()}] Checking ${pool.name}...`);
     const prevStatus = previousStatus[pool.id];
     const status = { api : false, stratum : false, hashRate : 0 };
 
@@ -93,7 +93,7 @@ const checkCurrentStatus = async() => {
         break;
       }
       case 'yiimp':
-        status.hashRate = api.json.yescryptR8.hashrate / 1e3; // [kH/s]
+        status.hashRate = (api.json.yescryptR8 || api.json.yescryptr8).hashrate / 1e3; // [kH/s]
         break;
       default:
         status.hashRate = 0;
