@@ -169,10 +169,10 @@ pools:
   -
     name: SEMI-POOL
     id: semi
-    url: https://zny.semi-pool.com
+    url: https://zny.semipool.net
     type: nomp
     stratum:
-      host: zny.semi-pool.com
+      host: zny.semipool.net
       port: 3333
   -
     name: Fi Pool
