@@ -28,7 +28,7 @@
     "twitter": "^1.7.1"
   },
   "devDependencies": {
-    "coveralls": "^3.0",
+    "coveralls": "^3.0.4",
     "eslint": "^5.16.0",
     "intelli-espower-loader": "^1.0.1",
     "istanbul": "^1.1.0-alpha.1",
