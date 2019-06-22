@@ -21,15 +21,15 @@
     "config": "^3.0.1",
     "date-utils": "^1.2.21",
     "dotenv": "^8.0.0",
-    "js-yaml": "^3.10.0",
+    "js-yaml": "^3.13.1",
     "node-cron": "^2.0.3",
     "portscanner": "^2.1.1",
     "text2png": "git+https://github.com/kn1cht/text2png#add-local-font-path",
     "twitter": "^1.7.1"
   },
   "devDependencies": {
-    "coveralls": "^3.0",
-    "eslint": "^5.16.0",
+    "coveralls": "^3.0.4",
+    "eslint": "^6.0.0",
     "intelli-espower-loader": "^1.0.1",
     "istanbul": "^1.1.0-alpha.1",
     "mocha": "^6.1.1",
