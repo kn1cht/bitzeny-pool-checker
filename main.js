@@ -76,7 +76,6 @@ const postTweet = async(status, media) => {
 const checkCurrentStatus = async() => {
   console.info(`[${new Date()}] Checking pools...`);
   for(const pool of config.pools) {
-    const prevStatus = previousStatus[pool.id];
     const status = { api : false, stratum : false, hashRate : 0 };
 
     for(let retry = 0; retry < MAX_RETRY; ++retry) {
@@ -105,7 +104,7 @@ const checkCurrentStatus = async() => {
       if(status.stratum) { break; }
     }
 
-    if(prevStatus.api !== status.api || prevStatus.stratum !== status.stratum) {
+    if(previousStatus[pool.id].api !== status.api || previousStatus[pool.id].stratum !== status.stratum) {
       let text = '';
       if(!status.api || !status.stratum) { text += `【鯖落ち】「${pool.name}」に接続障害の可能性\n`; }
       else { text += `【復旧】「${pool.name}」が復帰しました\n`; }
