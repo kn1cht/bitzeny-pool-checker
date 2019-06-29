@@ -17,6 +17,7 @@ pools:
     id: lapool
     url: https://lapool.me/bitzeny
     type: mpos
+    alert_disabled: true
     stratum:
       host: jp.lapool.me
       port: 3014
@@ -141,15 +142,6 @@ pools:
     stratum:
       host: stratum.zinntikumugai.xyz
       port: 4001
-  -
-    name: 採掘だよ！全員集合！
-    id: letsmine
-    url: http://letsminezny.orz.hm
-    type: nomp
-    alert_disabled: true
-    stratum:
-      host: letsminezny.orz.hm
-      port: 1234
   -
     name: NOMP.ZNY.POWERPOOL
     id: nomppower
