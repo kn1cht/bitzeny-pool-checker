@@ -47,15 +47,6 @@ pools:
     stratum:
       host: ukkey3.space
       port: 3333
-#  -
-#    name: 寛 永 通 宝
-#    shortname: 寛永通宝
-#    id: kannei
-#    url: https://portal.bitzenypool.work
-#    type: mpos
-#    stratum:
-#      host: bitzenypool.work
-#      port: 19666
   -
     name: みずたまり（bitzenyマイニングプール）
     shortname: みずたまり
@@ -75,15 +66,6 @@ pools:
       host: pool1.znymining.net
       port: 19666
   -
-    name: powerpool for BitZeny
-    shortname: powerpool
-    id: powerpool
-    url: https://zny.powerpool.jp
-    type: mpos
-    stratum:
-      host: m.powerpool.jp
-      port: 3333
-  -
     name: Hoge Pool - Bitzeny Mining Pool
     shortname: Hoge Pool
     id: hogepool
@@ -92,14 +74,6 @@ pools:
     stratum:
       host: stratum01.hogepool.net
       port: 3333
-  -
-    name: ココアプール
-    id: cocoa
-    url: https://www.cocoapool.net
-    type: mpos
-    stratum:
-      host: s.cocoapool.net
-      port: 14943
   -
     name: Daddy-Pool
     id: daddy
@@ -142,14 +116,6 @@ pools:
     stratum:
       host: stratum.zinntikumugai.xyz
       port: 4001
-  -
-    name: NOMP.ZNY.POWERPOOL
-    id: nomppower
-    url: https://nomp.zny.powerpool.jp
-    type: nomp
-    stratum:
-      host: nomp.zny.powerpool.jp
-      port: 16030
   -
     name: macyan.net
     id: macyan
