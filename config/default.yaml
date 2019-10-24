@@ -17,7 +17,7 @@ pools:
     id: lapool
     url: https://lapool.me/bitzeny
     type: mpos
-    alert_disabled: true
+    alert_disabled: false
     stratum:
       host: jp.lapool.me
       port: 3014
@@ -47,15 +47,6 @@ pools:
     stratum:
       host: ukkey3.space
       port: 3333
-  -
-    name: みずたまり（bitzenyマイニングプール）
-    shortname: みずたまり
-    id: mizutamari
-    url: https://bitzeny.mizutamari.work
-    type: mpos
-    stratum:
-      host: bitzeny-m.mizutamari.work
-      port: 19702
   -
     name: とある鯖管理人が運営するBitzeny採掘所
     shortname: とある鯖管
@@ -171,7 +162,7 @@ pools:
     url: https://www.zpool.ca
     type: yiimp
     stratum:
-      host: yescryptR8.jp.mine.zpool.ca
+      host: yescryptR8.sea.mine.zpool.ca
       port: 6323
   -
     name: LeyWa Mining Pool
