@@ -157,14 +157,6 @@ pools:
       host: yescryptR8.mine.zergpool.com
       port: 6323
   -
-    name: ZPOOL
-    id: zpool
-    url: https://www.zpool.ca
-    type: yiimp
-    stratum:
-      host: yescryptR8.sea.mine.zpool.ca
-      port: 6323
-  -
     name: LeyWa Mining Pool
     id: leywa
     url: https://leywapool.com
@@ -172,11 +164,3 @@ pools:
     stratum:
       host: leywapool.com
       port: 6243
-  -
-    name: MJ-COIN
-    id: mjcoin
-    url: http://mj-coin.xyz
-    type: nomp
-    stratum:
-      host: mj-coin.xyz
-      port: 3031
