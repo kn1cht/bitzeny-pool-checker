@@ -66,14 +66,6 @@ pools:
       host: stratum01.hogepool.net
       port: 3333
   -
-    name: Daddy-Pool
-    id: daddy
-    url: http://zny.daddy-pool.work
-    type: nomp
-    stratum:
-      host: zny.daddy-pool.work
-      port: 15021
-  -
     name: なんかBitZenyっていうイケハヤさん押し草コインのマイニングプール
     shortname: イケハヤさん押し草コイン
     id: ikehaya
