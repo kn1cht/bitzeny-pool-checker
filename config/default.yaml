@@ -75,15 +75,6 @@ pools:
       host: zenymypool.work
       port: 19666
   -
-    name: '禅風 : A Bitzeny Mining Pool'
-    shortname: 禅風
-    id: zenpoo
-    url: https://zenpoo.nyem.net
-    type: mpos
-    stratum:
-      host: zenpoo.nyem.net
-      port: 19666
-  -
     name: mofumofu.me
     id: mofumofu
     url: https://zny.mofumofu.me
