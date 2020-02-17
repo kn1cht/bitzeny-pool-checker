@@ -92,6 +92,7 @@ const checkCurrentStatus = async() => {
         break;
       }
       case 'yiimp':
+        if(!api.json.yescryptR8 && !api.json.yescryptr8) break;
         status.hashRate = (api.json.yescryptR8 || api.json.yescryptr8).hashrate / 1e3; // [kH/s]
         break;
       default:

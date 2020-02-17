@@ -57,15 +57,6 @@ pools:
       host: pool1.znymining.net
       port: 19666
   -
-    name: Hoge Pool - Bitzeny Mining Pool
-    shortname: Hoge Pool
-    id: hogepool
-    url: https://hogepool.net
-    type: mpos
-    stratum:
-      host: stratum01.hogepool.net
-      port: 3333
-  -
     name: なんかBitZenyっていうイケハヤさん押し草コインのマイニングプール
     shortname: イケハヤさん押し草コイン
     id: ikehaya
@@ -109,10 +100,10 @@ pools:
   -
     name: Fi Pool
     id: fipool
-    url: https://fipool.com/bitzeny
+    url: 153.126.177.24/bitzeny
     type: mpos
     stratum:
-      host: fipool.com
+      host: 153.126.177.24
       port: 19000
   -
     name: pecadol pool
