@@ -90,17 +90,9 @@ pools:
       host: macyan.net
       port: 3032
   -
-    name: SEMI-POOL
-    id: semi
-    url: https://zny.semipool.net
-    type: nomp
-    stratum:
-      host: zny.semipool.net
-      port: 3333
-  -
     name: Fi Pool
     id: fipool
-    url: 153.126.177.24/bitzeny
+    url: https://ik1-324-22270.vs.sakura.ne.jp/bitzeny
     type: mpos
     stratum:
       host: 153.126.177.24
@@ -108,28 +100,11 @@ pools:
   -
     name: pecadol pool
     id: pecadol
-    url: https://pool.pecadol.xyz
-    type: yiimp
-    stratum:
-      host: pool.pecadol.xyz
-      port: 6383
-  -
-    name: Cryptogrinder
-    id: grinder
-    url: https://cryptogrinder.com
+    url: https://www.pecadol.xyz
     type: nomp
     stratum:
-      host: cryptogrinder.com
-      port: 9002
-  -
-    name: Zergpool
-    id: zergpool
-    url: https://zergpool.com
-    api_url: http://api.zergpool.com:8080/api/status
-    type: yiimp
-    stratum:
-      host: yescryptR8.mine.zergpool.com
-      port: 6323
+      host: stratum.pecadol.xyz
+      port: 6383
   -
     name: LeyWa Mining Pool
     id: leywa
