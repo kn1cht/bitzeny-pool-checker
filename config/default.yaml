@@ -57,15 +57,6 @@ pools:
       host: pool1.znymining.net
       port: 19666
   -
-    name: なんかBitZenyっていうイケハヤさん押し草コインのマイニングプール
-    shortname: イケハヤさん押し草コイン
-    id: ikehaya
-    url: https://www.zenymypool.work
-    type: mpos
-    stratum:
-      host: zenymypool.work
-      port: 19666
-  -
     name: mofumofu.me
     id: mofumofu
     url: https://zny.mofumofu.me
@@ -92,10 +83,10 @@ pools:
   -
     name: Fi Pool
     id: fipool
-    url: https://ik1-324-22270.vs.sakura.ne.jp/bitzeny
+    url: https://fipool.ath.cx/bitzeny/
     type: mpos
     stratum:
-      host: 153.126.177.24
+      host: stratum-fipool.ath.cx
       port: 19000
   -
     name: pecadol pool
