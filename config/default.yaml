@@ -65,14 +65,6 @@ pools:
       host: zny.mofumofu.me
       port: 3333
   -
-    name: 人のプール
-    id: hitonopool
-    url: http://mining.zinntikumugai.xyz
-    type: nomp
-    stratum:
-      host: stratum.zinntikumugai.xyz
-      port: 4001
-  -
     name: macyan.net
     id: macyan
     url: http://macyan.net:8080
