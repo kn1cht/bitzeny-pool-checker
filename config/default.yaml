@@ -40,14 +40,6 @@ pools:
       host: bitzeny.bunnymining.work
       port: 19333
   -
-    name: 大人の自由研究
-    id: otonajiyuu
-    url: https://ukkey3.space/bitzeny
-    type: mpos
-    stratum:
-      host: ukkey3.space
-      port: 3333
-  -
     name: とある鯖管理人が運営するBitzeny採掘所
     shortname: とある鯖管
     id: sabakan
