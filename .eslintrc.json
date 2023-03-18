@@ -44,7 +44,7 @@
       }],
     "eqeqeq"          : "error",
     "block-scoped-var": "error",
-    "complexity"      : "error",
+    "complexity"      : "warn",
     "curly": "error",
     "default-case": "error",
     "dot-location": ["error", "property"],

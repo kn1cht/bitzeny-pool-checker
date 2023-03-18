@@ -92,7 +92,9 @@ const checkCurrentStatus = async() => {
         break;
       }
       case 'yiimp':
-        if(!api.json.yescryptR8 && !api.json.yescryptr8) break;
+        if(!api.json.yescryptR8 && !api.json.yescryptr8) {
+          break;
+        }
         status.hashRate = (api.json.yescryptR8 || api.json.yescryptr8).hashrate / 1e3; // [kH/s]
         break;
       default:
@@ -163,9 +165,12 @@ const tweetAllStatus = () => {
 
   const image = text2png(imageText, {
     localFontPath : 'font/ipagp.ttf',
+    localFontName : 'IPA P Gothic',
     lineSpacing   : 10,
     bgColor       : 'white'
   });
+  var fs = require('fs');
+  fs.writeFileSync('out.png', image);
   postTweet(text, image);
 };
 
